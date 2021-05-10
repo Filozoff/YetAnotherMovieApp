@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1631D22649C30A007ACEFC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1631D12649C30A007ACEFC /* Color.swift */; };
+		2F1631D42649CAAA007ACEFC /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1631D32649CAAA007ACEFC /* Layout.swift */; };
+		2F1631DE2649D2BB007ACEFC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F1631DD2649D2BB007ACEFC /* Colors.xcassets */; };
 		2FF12FAA2649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF12FA92649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift */; };
 		2FF12FAC2649BB7A0008BEC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF12FAB2649BB7A0008BEC5 /* ContentView.swift */; };
 		2FF12FAE2649BB7B0008BEC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF12FAD2649BB7B0008BEC5 /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F1631D12649C30A007ACEFC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		2F1631D32649CAAA007ACEFC /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		2F1631DD2649D2BB007ACEFC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2FF12FA62649BB7A0008BEC5 /* YetAnotherMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YetAnotherMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF12FA92649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YetAnotherMovieAppApp.swift; sourceTree = "<group>"; };
 		2FF12FAB2649BB7A0008BEC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,9 +78,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F1631D02649C2FD007ACEFC /* Styleguide */ = {
+			isa = PBXGroup;
+			children = (
+				2F1631D12649C30A007ACEFC /* Color.swift */,
+				2F1631D32649CAAA007ACEFC /* Layout.swift */,
+			);
+			path = Styleguide;
+			sourceTree = "<group>";
+		};
 		2F902E282649BCF2003701AF /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2F1631D02649C2FD007ACEFC /* Styleguide */,
 				2FF12FA92649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift */,
 				2FF12FAB2649BB7A0008BEC5 /* ContentView.swift */,
 			);
@@ -180,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				2FF12FB02649BB7B0008BEC5 /* Preview Assets.xcassets */,
+				2F1631DD2649D2BB007ACEFC /* Colors.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -305,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F1631DE2649D2BB007ACEFC /* Colors.xcassets in Resources */,
 				2FF12FB12649BB7B0008BEC5 /* Preview Assets.xcassets in Resources */,
 				2FF12FAE2649BB7B0008BEC5 /* Assets.xcassets in Resources */,
 			);
@@ -332,7 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF12FAC2649BB7A0008BEC5 /* ContentView.swift in Sources */,
+				2F1631D42649CAAA007ACEFC /* Layout.swift in Sources */,
 				2FF12FAA2649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift in Sources */,
+				2F1631D22649C30A007ACEFC /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

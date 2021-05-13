@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  DiscoverView.swift
 //  YetAnotherMovieApp
 //
 //  Created by Filo on 10/05/2021.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct HomeView: View {
-	
+struct DiscoverView: View {
+
 	@State private var width: CGFloat = 0.0
 	
 	var body: some View {
@@ -60,7 +60,7 @@ struct HomeView: View {
 						}
 					}
 				}
-				.navigationTitle("Home")
+				.navigationTitle("Discover")
 			}
 		}
 	}
@@ -70,7 +70,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
 	
 	static var previews: some View {
-		HomeView()
+		DiscoverView()
 			.accentColor(.mvPrimary)
 	}
 }

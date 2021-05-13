@@ -13,7 +13,7 @@ struct MainTabView: View {
 	
     var body: some View {
 		TabView(selection: $selectedItem) {
-			HomeView()
+			DiscoverView()
 				.tabItem {
 					Label("Home", systemImage: selectedItem == .home ? "house.fill" : "house")
 				}

@@ -22,15 +22,7 @@ struct MediumInfo: View {
 				.resizable()
 				.scaledToFill()
 				.aspectRatio(16/9, contentMode: .fill)
-				.cornerRadius(Layout.CornerRadius.regular)
-				.overlay(
-					RoundedRectangle(cornerRadius: Layout.CornerRadius.regular)
-						.strokeBorder(
-							Color.black.opacity(0.7),
-							lineWidth: 1.0,
-							antialiased: true
-						)
-				)
+				.rounded(cornerRadius: Layout.CornerRadius.regular, border: .black.opacity(0.7))
 		}
     }
 }

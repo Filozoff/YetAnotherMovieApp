@@ -17,4 +17,9 @@ enum Layout {
 		static let large: CGFloat = 32.0
 		static let extraLarge: CGFloat = 64.0
 	}
+
+	enum CornerRadius {
+
+		static let regular: CGFloat = 10.0
+	}
 }

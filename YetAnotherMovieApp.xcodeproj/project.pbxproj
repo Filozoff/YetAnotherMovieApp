@@ -131,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				2FF12FAD2649BB7B0008BEC5 /* Assets.xcassets */,
+				2F1631DD2649D2BB007ACEFC /* Colors.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -226,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				2FF12FB02649BB7B0008BEC5 /* Preview Assets.xcassets */,
-				2F1631DD2649D2BB007ACEFC /* Colors.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";

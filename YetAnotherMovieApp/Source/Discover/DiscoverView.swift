@@ -11,19 +11,17 @@ struct DiscoverView: View {
 	
 	var body: some View {
 		NavigationView {
-			GeometryReader { mainGeometry in
-				ScrollView {
-					LazyVGrid(
-						columns: [GridItem(.fixed(mainGeometry.size.width))],
-						spacing: Layout.Spacings.small
-					) {
-						ForEach(0..<30) { index in
-							MediumHGrid()
-						}
+			ScrollView {
+				LazyVGrid(
+					columns: [GridItem()],
+					spacing: Layout.Spacings.small
+				) {
+					ForEach(0..<30) { index in
+						MediumHGrid()
 					}
 				}
-				.navigationTitle("Discover")
 			}
+			.navigationTitle("Discover")
 		}
 	}
 }

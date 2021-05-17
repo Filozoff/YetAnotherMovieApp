@@ -21,7 +21,7 @@ struct MediumInfo: View {
 			Image("spiderman")
 				.resizable()
 				.scaledToFill()
-				.aspectRatio(16/9, contentMode: .fill)
+				.aspectRatio(16/9, contentMode: .fit)
 				.rounded(cornerRadius: Layout.CornerRadius.regular, border: .black.opacity(0.7))
 		}
     }
@@ -31,7 +31,7 @@ struct MediumInfo_Previews: PreviewProvider {
 	
     static var previews: some View {
         MediumInfo()
-			.frame(height: 250)
+			.frame(width: 350)
 			.previewLayout(.sizeThatFits)
 			.padding()
     }

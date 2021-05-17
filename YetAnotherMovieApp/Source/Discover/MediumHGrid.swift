@@ -35,8 +35,6 @@ struct MediumHorizontalGrid_Previews: PreviewProvider {
 
     static var previews: some View {
         MediumHGrid()
-			.frame(height: 300)
 			.previewLayout(.sizeThatFits)
-			.padding()
     }
 }

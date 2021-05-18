@@ -17,6 +17,8 @@
 		2F1C78E9264DC20600530628 /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E8264DC20600530628 /* Rounded.swift */; };
 		2F53DABF264C82CA001323A6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F53DABE264C82CA001323A6 /* ViewExtension.swift */; };
 		2F6EF49A2652F241003EEF2B /* SmallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EF4992652F241003EEF2B /* SmallInfo.swift */; };
+		2FC55C932653020900C70735 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC55C922653020900C70735 /* Networking.framework */; };
+		2FC55C942653020900C70735 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC55C922653020900C70735 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2FF12FAA2649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF12FA92649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift */; };
 		2FF12FAC2649BB7A0008BEC5 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF12FAB2649BB7A0008BEC5 /* MainTabView.swift */; };
 		2FF12FAE2649BB7B0008BEC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF12FAD2649BB7B0008BEC5 /* Assets.xcassets */; };
@@ -42,6 +44,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2FC55C952653020900C70735 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2FC55C942653020900C70735 /* Networking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2F1631D12649C30A007ACEFC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2F1631D32649CAAA007ACEFC /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
@@ -53,6 +69,7 @@
 		2F1C78E8264DC20600530628 /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
 		2F53DABE264C82CA001323A6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		2F6EF4992652F241003EEF2B /* SmallInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallInfo.swift; sourceTree = "<group>"; };
+		2FC55C922653020900C70735 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF12FA62649BB7A0008BEC5 /* YetAnotherMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YetAnotherMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF12FA92649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YetAnotherMovieAppApp.swift; sourceTree = "<group>"; };
 		2FF12FAB2649BB7A0008BEC5 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -72,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC55C932653020900C70735 /* Networking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +241,14 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		2FC55C912653020900C70735 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FC55C922653020900C70735 /* Networking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2FF12F9D2649BB7A0008BEC5 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +256,7 @@
 				2FF12FBA2649BB7B0008BEC5 /* YetAnotherMovieAppTests */,
 				2FF12FC52649BB7B0008BEC5 /* YetAnotherMovieAppUITests */,
 				2FF12FA72649BB7A0008BEC5 /* Products */,
+				2FC55C912653020900C70735 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -290,6 +317,7 @@
 				2FF12FA22649BB7A0008BEC5 /* Sources */,
 				2FF12FA32649BB7A0008BEC5 /* Frameworks */,
 				2FF12FA42649BB7A0008BEC5 /* Resources */,
+				2FC55C952653020900C70735 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -582,7 +610,6 @@
 				DEVELOPMENT_TEAM = W3A96C9WSG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "YetAnotherMovieApp/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,7 +631,6 @@
 				DEVELOPMENT_TEAM = W3A96C9WSG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "YetAnotherMovieApp/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,7 +650,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3A96C9WSG;
 				INFOPLIST_FILE = "YetAnotherMovieAppTests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -646,7 +671,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3A96C9WSG;
 				INFOPLIST_FILE = "YetAnotherMovieAppTests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

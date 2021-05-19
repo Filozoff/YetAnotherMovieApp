@@ -10,19 +10,25 @@ import SwiftUI
 struct MediumInfo: View {
 
     var body: some View {
-		VStack(alignment: .leading) {
+		VStack {
 			Text("League Of Legends: Wild Rift")
 				.font(.title2)
+				.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
 
 			Text("Łowy rozpoczete")
 				.font(.title3)
 				.foregroundColor(.secondary)
+				.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
 
-			Image("spiderman")
-				.resizable()
-				.scaledToFill()
-				.aspectRatio(16/9, contentMode: .fit)
-				.rounded(cornerRadius: Layout.CornerRadius.regular, border: .black.opacity(0.7))
+			GeometryReader { reader in
+				Image("ironman")
+					.resizable()
+					.scaledToFill()
+					.frame(width: reader.size.width, height: reader.size.height)
+					.clipped()
+			}
+			.aspectRatio(16/9, contentMode: .fit)
+			.rounded(cornerRadius: Layout.CornerRadius.regular, border: .black.opacity(0.7))
 		}
     }
 }
@@ -33,6 +39,5 @@ struct MediumInfo_Previews: PreviewProvider {
         MediumInfo()
 			.frame(width: 350)
 			.previewLayout(.sizeThatFits)
-			.padding()
     }
 }

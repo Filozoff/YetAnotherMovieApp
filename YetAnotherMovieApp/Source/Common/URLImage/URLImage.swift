@@ -24,7 +24,7 @@ struct URLImage<Placeholder>: View where Placeholder: View {
 
 	private let placeholder: Placeholder
 
-	init(url: URL, session: URLSession = .shared, @ViewBuilder placeholder: () -> Placeholder) {
+	init(url: URL?, session: URLSession = .shared, @ViewBuilder placeholder: () -> Placeholder) {
 		self.placeholder = placeholder()
 		_loader = StateObject(wrappedValue: ImageLoader(url: url, session: session))
 	}
@@ -32,7 +32,7 @@ struct URLImage<Placeholder>: View where Placeholder: View {
 
 extension URLImage {
 
-	init(url: URL, session: URLSession = .shared) where Placeholder == ProgressView<EmptyView, EmptyView> {
+	init(url: URL?, session: URLSession = .shared) where Placeholder == ProgressView<EmptyView, EmptyView> {
 		self.init(url: url, session: session) {
 			ProgressView()
 		}

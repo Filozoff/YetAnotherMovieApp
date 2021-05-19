@@ -9,20 +9,25 @@ import SwiftUI
 
 struct MediumInfo: View {
 
+	@StateObject var viewModel = MediumInfoViewModel(
+		title: "League Of Legends: Wild Rift",
+		subtitle: "Łowy rozpoczete",
+		imageURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Big_%26_Small_Pumkins.JPG")!
+	)
+
     var body: some View {
 		VStack {
-			Text("League Of Legends: Wild Rift")
+			Text(viewModel.title)
 				.font(.title2)
 				.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
 
-			Text("Łowy rozpoczete")
+			Text(viewModel.subtitle)
 				.font(.title3)
 				.foregroundColor(.secondary)
 				.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
 
 			GeometryReader { reader in
-				Image("ironman")
-					.resizable()
+				URLImage(url: viewModel.imageURL)
 					.scaledToFill()
 					.frame(width: reader.size.width, height: reader.size.height)
 					.clipped()

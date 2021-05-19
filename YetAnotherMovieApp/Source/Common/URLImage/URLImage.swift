@@ -15,6 +15,7 @@ struct URLImage<Placeholder>: View where Placeholder: View {
 		Group {
 			if loader.image != nil {
 				Image(uiImage: loader.image!)
+					.resizable()
 			} else {
 				placeholder
 			}

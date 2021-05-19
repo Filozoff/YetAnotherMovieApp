@@ -135,10 +135,10 @@
 		2F1631D62649CCCE007ACEFC /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				2F1631DB2649CD6C007ACEFC /* DiscoverView.swift */,
-				2F1C78E3264D9FE700530628 /* MediumHGrid.swift */,
-				2F1C78E5264DA17E00530628 /* MediumInfo.swift */,
-				2F6EF4992652F241003EEF2B /* SmallInfo.swift */,
+				2F36A45A26544F93001A4FD7 /* DiscoverView */,
+				2F36A45B26544FA5001A4FD7 /* MediumHGrid */,
+				2F36A45C26544FB3001A4FD7 /* MediumInfo */,
+				2F36A45D26544FBF001A4FD7 /* SmallInfo */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -157,6 +157,38 @@
 				2F1C78E8264DC20600530628 /* Rounded.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		2F36A45A26544F93001A4FD7 /* DiscoverView */ = {
+			isa = PBXGroup;
+			children = (
+				2F1631DB2649CD6C007ACEFC /* DiscoverView.swift */,
+			);
+			path = DiscoverView;
+			sourceTree = "<group>";
+		};
+		2F36A45B26544FA5001A4FD7 /* MediumHGrid */ = {
+			isa = PBXGroup;
+			children = (
+				2F1C78E3264D9FE700530628 /* MediumHGrid.swift */,
+			);
+			path = MediumHGrid;
+			sourceTree = "<group>";
+		};
+		2F36A45C26544FB3001A4FD7 /* MediumInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2F1C78E5264DA17E00530628 /* MediumInfo.swift */,
+			);
+			path = MediumInfo;
+			sourceTree = "<group>";
+		};
+		2F36A45D26544FBF001A4FD7 /* SmallInfo */ = {
+			isa = PBXGroup;
+			children = (
+				2F6EF4992652F241003EEF2B /* SmallInfo.swift */,
+			);
+			path = SmallInfo;
 			sourceTree = "<group>";
 		};
 		2F53DABD264C82A6001323A6 /* Extensions */ = {

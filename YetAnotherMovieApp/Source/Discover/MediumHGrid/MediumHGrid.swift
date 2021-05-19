@@ -34,7 +34,7 @@ struct MediumHGrid: View {
 struct MediumHorizontalGrid_Previews: PreviewProvider {
 
     static var previews: some View {
-        MediumHGrid()
+		MediumHGrid()
 			.previewLayout(.sizeThatFits)
     }
 }

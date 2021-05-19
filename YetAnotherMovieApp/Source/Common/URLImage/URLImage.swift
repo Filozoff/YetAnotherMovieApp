@@ -30,14 +30,27 @@ struct URLImage<Placeholder>: View where Placeholder: View {
 	}
 }
 
+extension URLImage {
+
+	init(url: URL, session: URLSession = .shared) where Placeholder == ProgressView<EmptyView, EmptyView> {
+		self.init(url: url, session: session) {
+			ProgressView()
+		}
+	}
+}
+
 struct URLImage_Previews: PreviewProvider {
 
 	private static let url = URL(string: "https://p.kindpng.com/picc/s/81-819387_iron-man-skin-face-iron-man-mask-png.png")!
 
 	static var previews: some View {
-		URLImage(url: url) {
-			ProgressView(value: 0.3)
-				.progressViewStyle(CircularProgressViewStyle())
+		Group {
+			URLImage(url: url)
+				.previewDisplayName("Default placeholder")
+			URLImage(url: url) {
+				Text("Loading")
+			}
+			.previewDisplayName("Custom placeholder")
 		}
 		.previewLayout(.sizeThatFits)
 	}

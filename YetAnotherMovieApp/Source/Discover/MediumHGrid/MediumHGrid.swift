@@ -9,6 +9,21 @@ import SwiftUI
 
 struct MediumHGrid: View {
 
+	@StateObject private var viewModel = MediumHGridViewModel(
+		elements: [
+			MediumInfoViewModel(
+				title: "League Of Legends: Wild Rift",
+				subtitle: "Łowy rozpoczete",
+				imageURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Big_%26_Small_Pumkins.JPG")!
+			),
+			MediumInfoViewModel(
+				title: "Ghost Rider",
+				subtitle: "Spirits of Vengeance wskrzeszone!",
+				imageURL: URL(string: "https://heronews.pl/wp-content/uploads/2017/06/ghost-rider-johnny-blaze.jpg")!
+			)
+		]
+	)
+
 	@State private var width: CGFloat = 0.0
 
     var body: some View {
@@ -20,8 +35,8 @@ struct MediumHGrid: View {
 
 			ScrollView(.horizontal) {
 				LazyHGrid(rows: [GridItem()], alignment: .top, spacing: Layout.Spacings.small) {
-					ForEach(0..<2) { index in
-						MediumInfo()
+					ForEach(viewModel.elements) { element in
+						MediumInfo(viewModel: element)
 							.frame(width: width)
 					}
 				}

@@ -5,10 +5,11 @@
 //  Created by Filo on 19/05/2021.
 //
 
-import SwiftUI
+import Foundation
 
-class MediumInfoViewModel: ObservableObject {
+class MediumInfoViewModel: ObservableObject, Identifiable {
 
+	let id = UUID()
 	let title: String
 	let subtitle: String
 	let imageURL: URL?

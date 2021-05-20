@@ -16,6 +16,7 @@
 		2F1C78E6264DA17E00530628 /* MediumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E5264DA17E00530628 /* MediumInfo.swift */; };
 		2F1C78E9264DC20600530628 /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E8264DC20600530628 /* Rounded.swift */; };
 		2F53DABF264C82CA001323A6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F53DABE264C82CA001323A6 /* ViewExtension.swift */; };
+		2F6B90FF2656E99A00BE8821 /* MediumHGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6B90FE2656E99A00BE8821 /* MediumHGridViewModel.swift */; };
 		2F6EF49A2652F241003EEF2B /* SmallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EF4992652F241003EEF2B /* SmallInfo.swift */; };
 		2FB9D4D0265581B000009BD5 /* MediumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9D4CF265581B000009BD5 /* MediumInfoViewModel.swift */; };
 		2FB9D4D32655834800009BD5 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9D4D22655834800009BD5 /* URLImage.swift */; };
@@ -71,6 +72,7 @@
 		2F1C78E5264DA17E00530628 /* MediumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumInfo.swift; sourceTree = "<group>"; };
 		2F1C78E8264DC20600530628 /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
 		2F53DABE264C82CA001323A6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		2F6B90FE2656E99A00BE8821 /* MediumHGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumHGridViewModel.swift; sourceTree = "<group>"; };
 		2F6EF4992652F241003EEF2B /* SmallInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallInfo.swift; sourceTree = "<group>"; };
 		2FB9D4CF265581B000009BD5 /* MediumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumInfoViewModel.swift; sourceTree = "<group>"; };
 		2FB9D4D22655834800009BD5 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2F1C78E3264D9FE700530628 /* MediumHGrid.swift */,
+				2F6B90FE2656E99A00BE8821 /* MediumHGridViewModel.swift */,
 			);
 			path = MediumHGrid;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6B90FF2656E99A00BE8821 /* MediumHGridViewModel.swift in Sources */,
 				2FF12FAC2649BB7A0008BEC5 /* MainTabView.swift in Sources */,
 				2F1631D42649CAAA007ACEFC /* Layout.swift in Sources */,
 				2FB9D4D6265583B600009BD5 /* ImageLoader.swift in Sources */,

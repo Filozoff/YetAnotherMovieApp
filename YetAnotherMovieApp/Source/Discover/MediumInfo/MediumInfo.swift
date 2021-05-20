@@ -9,11 +9,7 @@ import SwiftUI
 
 struct MediumInfo: View {
 
-	@StateObject var viewModel = MediumInfoViewModel(
-		title: "League Of Legends: Wild Rift",
-		subtitle: "Łowy rozpoczete",
-		imageURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Big_%26_Small_Pumkins.JPG")!
-	)
+	@ObservedObject var viewModel: MediumInfoViewModel
 
     var body: some View {
 		VStack {
@@ -39,9 +35,15 @@ struct MediumInfo: View {
 }
 
 struct MediumInfo_Previews: PreviewProvider {
+
+	static let previewObject = MediumInfoViewModel(
+		title: "League Of Legends: Wild Rift",
+		subtitle: "Łowy rozpoczete",
+		imageURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Big_%26_Small_Pumkins.JPG")!
+	)
 	
     static var previews: some View {
-        MediumInfo()
+		MediumInfo(viewModel: previewObject)
 			.frame(width: 350)
 			.previewLayout(.sizeThatFits)
     }

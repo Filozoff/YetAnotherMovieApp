@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F7E9636266023B10024715F /* MovieNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E9635266023B10024715F /* MovieNetworking.swift */; };
+		2F7E963826602B3B0024715F /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E963726602B3B0024715F /* JSONDecoder.swift */; };
+		2F7E963A266032260024715F /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E9639266032260024715F /* ImageSize.swift */; };
 		2FC55C6F2652F96000C70735 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC55C652652F95F00C70735 /* Networking.framework */; };
 		2FC55C742652F96000C70735 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC55C732652F96000C70735 /* NetworkingTests.swift */; };
 		2FC55C762652F96000C70735 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FC55C682652F95F00C70735 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F7E9635266023B10024715F /* MovieNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetworking.swift; sourceTree = "<group>"; };
+		2F7E963726602B3B0024715F /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		2F7E9639266032260024715F /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		2FC55C652652F95F00C70735 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC55C682652F95F00C70735 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		2FC55C692652F95F00C70735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F7E963D266040FC0024715F /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				2F7E963726602B3B0024715F /* JSONDecoder.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		2FC55C5B2652F95F00C70735 = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +150,9 @@
 			children = (
 				2FC55C842652FBA800C70735 /* MovieDB.swift */,
 				2FC55C862652FCED00C70735 /* MovieDBNetworking.swift */,
+				2F7E9635266023B10024715F /* MovieNetworking.swift */,
 				2FC55C882652FD5500C70735 /* DTOs */,
+				2F7E963D266040FC0024715F /* Factories */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -144,6 +160,7 @@
 		2FC55C882652FD5500C70735 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				2F7E9639266032260024715F /* ImageSize.swift */,
 				2FC55C892652FD6F00C70735 /* MediaTypeDTO.swift */,
 				2FC55C8F2652FE9C00C70735 /* MovieDTO.swift */,
 				2FC55C8D2652FE5500C70735 /* MovieListDTO.swift */,
@@ -265,6 +282,9 @@
 				2FC55C872652FCED00C70735 /* MovieDBNetworking.swift in Sources */,
 				2FC55C902652FE9C00C70735 /* MovieDTO.swift in Sources */,
 				2FC55C852652FBA800C70735 /* MovieDB.swift in Sources */,
+				2F7E963826602B3B0024715F /* JSONDecoder.swift in Sources */,
+				2F7E963A266032260024715F /* ImageSize.swift in Sources */,
+				2F7E9636266023B10024715F /* MovieNetworking.swift in Sources */,
 				2FC55C8E2652FE5500C70735 /* MovieListDTO.swift in Sources */,
 				2FC55C8A2652FD6F00C70735 /* MediaTypeDTO.swift in Sources */,
 			);

@@ -9,24 +9,11 @@ import SwiftUI
 
 struct MediumHGrid: View {
 
-	@StateObject private var viewModel = MediumHGridViewModel(
-		elements: [
-			MediumInfoViewModel(
-				title: "League Of Legends: Wild Rift",
-				subtitle: "Łowy rozpoczete",
-				imageURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Big_%26_Small_Pumkins.JPG")!
-			),
-			MediumInfoViewModel(
-				title: "Ghost Rider",
-				subtitle: "Spirits of Vengeance wskrzeszone!",
-				imageURL: URL(string: "https://heronews.pl/wp-content/uploads/2017/06/ghost-rider-johnny-blaze.jpg")!
-			)
-		]
-	)
+	@ObservedObject var viewModel: MediumHGridViewModel
 
 	@State private var width: CGFloat = 0.0
 
-    var body: some View {
+	var body: some View {
 		ZStack {
 			Color
 				.clear
@@ -43,13 +30,28 @@ struct MediumHGrid: View {
 				.padding(.horizontal)
 			}
 		}
-    }
+	}
 }
 
 struct MediumHorizontalGrid_Previews: PreviewProvider {
 
-    static var previews: some View {
-		MediumHGrid()
+	static let previewObject = MediumHGridViewModel(
+		elements: [
+			MediumInfoViewModel(
+				title: "League Of Legends: Wild Rift",
+				subtitle: "Łowy rozpoczete",
+				imagePath: "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+			),
+			MediumInfoViewModel(
+				title: "Spider man",
+				subtitle: "Spirits of Vengeance wskrzeszone!",
+				imagePath: "/sd1eByiFLL0arwkip6lV6l25cSj.jpg"
+			)
+		]
+	)
+
+	static var previews: some View {
+		MediumHGrid(viewModel: previewObject)
 			.previewLayout(.sizeThatFits)
-    }
+	}
 }

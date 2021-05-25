@@ -7,34 +7,34 @@
 
 import Combine
 
-public class MovieDBNetworking {
-
+public class MovieDBNetworking: MovieNetworking {
+	
 	let session: URLSession
-	let baseURL: URL
 
-	private(set) var service = MovieDB()
+	private let service = MovieDB()
 
 	public init(session: URLSession) {
 		self.session = session
-
-		var components = URLComponents()
-		components.scheme = service.scheme
-		components.host = service.host
-		baseURL = components.url!
 	}
 
 	public func getTrending(for mediaType: MediaTypeDTO, in timeWindow: TimeWindowDTO) -> AnyPublisher<MovieListDTO, Error> {
-		let url = URL(string: "\(baseURL.absoluteString)/\(service.version)/trending/\(mediaType.rawValue)/\(timeWindow.rawValue)")!
-		let decoder = JSONDecoder()
-		decoder.keyDecodingStrategy = .convertFromSnakeCase
-
-		var request = URLRequest(url: url)
+		guard let url = URL(string: "\(service.base)/trending/\(mediaType.rawValue)/\(timeWindow.rawValue)") else { fatalError() }
+		var request = service.applyCommonHeaders(to: URLRequest(url: url))
 		request.httpMethod = "GET"
-		request.setValue("application/json;charset=utf-8", forHTTPHeaderField: "Content-Type")
-		request.setValue("Bearer \(service.apiKey)", forHTTPHeaderField: "Authorization")
 		return session.dataTaskPublisher(for: request)
 			.map { $0.data }
-			.decode(type: MovieListDTO.self, decoder: decoder)
+			.decode(type: MovieListDTO.self, decoder: JSONDecoder.Factory.snakeCase())
+			.receive(on: RunLoop.main)
+			.eraseToAnyPublisher()
+	}
+
+	public func image(width: Float, path: String) -> AnyPublisher<Data, URLSession.DataTaskPublisher.Failure> {
+		let imageSize = ImageSize(width: width)
+		guard let url = URL(string: "\(service.baseImage)/\(imageSize.rawValue)\(path)") else { fatalError() }
+		var request = service.applyCommonHeaders(to: URLRequest(url: url))
+		request.httpMethod = "GET"
+		return session.dataTaskPublisher(for: request)
+			.map { $0.data }
 			.eraseToAnyPublisher()
 	}
 }

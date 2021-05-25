@@ -5,6 +5,7 @@
 //  Created by Filo on 13/05/2021.
 //
 
+import Networking
 import SwiftUI
 
 struct MediumInfo: View {
@@ -16,14 +17,16 @@ struct MediumInfo: View {
 			Text(viewModel.title)
 				.font(.title2)
 				.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+				.lineLimit(1)
 
 			Text(viewModel.subtitle)
 				.font(.title3)
 				.foregroundColor(.secondary)
 				.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+				.lineLimit(1)
 
 			GeometryReader { reader in
-				URLImage(url: viewModel.imageURL)
+				MovieImage(path: viewModel.imagePath, remote: MovieDBNetworking(session: .shared))
 					.scaledToFill()
 					.frame(width: reader.size.width, height: reader.size.height)
 					.clipped()
@@ -39,7 +42,7 @@ struct MediumInfo_Previews: PreviewProvider {
 	static let previewObject = MediumInfoViewModel(
 		title: "League Of Legends: Wild Rift",
 		subtitle: "Łowy rozpoczete",
-		imageURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Big_%26_Small_Pumkins.JPG")!
+		imagePath: "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
 	)
 	
     static var previews: some View {

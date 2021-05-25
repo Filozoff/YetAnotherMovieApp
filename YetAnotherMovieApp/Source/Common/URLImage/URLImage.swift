@@ -9,12 +9,12 @@ import SwiftUI
 
 struct URLImage<Placeholder>: View where Placeholder: View {
 
-	@StateObject var loader: ImageLoader
+	@StateObject private var loader: ImageLoader
 
 	var body: some View {
 		Group {
-			if loader.image != nil {
-				Image(uiImage: loader.image!)
+			if let image = loader.image {
+				Image(uiImage: image)
 					.resizable()
 			} else {
 				placeholder
@@ -29,12 +29,23 @@ struct URLImage<Placeholder>: View where Placeholder: View {
 		self.placeholder = placeholder()
 		_loader = StateObject(wrappedValue: ImageLoader(url: url, session: session))
 	}
+
+	init(urlRequest: URLRequest?, session: URLSession = .shared, @ViewBuilder placeholder: () -> Placeholder) {
+		self.placeholder = placeholder()
+		_loader = StateObject(wrappedValue: ImageLoader(urlRequest: urlRequest, session: session))
+	}
 }
 
 extension URLImage {
 
 	init(url: URL?, session: URLSession = .shared) where Placeholder == ProgressView<EmptyView, EmptyView> {
 		self.init(url: url, session: session) {
+			ProgressView()
+		}
+	}
+
+	init(urlRequest: URLRequest?, session: URLSession = .shared) where Placeholder == ProgressView<EmptyView, EmptyView> {
+		self.init(urlRequest: urlRequest, session: session) {
 			ProgressView()
 		}
 	}

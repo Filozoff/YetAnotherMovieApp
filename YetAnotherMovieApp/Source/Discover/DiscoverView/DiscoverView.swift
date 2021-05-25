@@ -5,10 +5,12 @@
 //  Created by Filo on 10/05/2021.
 //
 
+import Networking
 import SwiftUI
 
 struct DiscoverView: View {
 
+	@StateObject private var viewModel = DiscoverViewModel(networking: MovieDBNetworking(session: .shared))
 	@State private var width: CGFloat = 0.0
 	
 	var body: some View {
@@ -18,7 +20,7 @@ struct DiscoverView: View {
 					columns: [GridItem()],
 					spacing: Layout.Spacings.small
 				) {
-					MediumHGrid()
+					MediumHGrid(viewModel: viewModel.moviesGridViewModel)
 
 					ZStack {
 						Color
@@ -42,6 +44,9 @@ struct DiscoverView: View {
 				}
 			}
 			.navigationTitle("Discover")
+			.onAppear {
+				viewModel.loadData()
+			}
 		}
 	}
 }

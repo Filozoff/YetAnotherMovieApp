@@ -12,11 +12,11 @@ class MediumInfoViewModel: ObservableObject, Identifiable {
 	let id = UUID()
 	let title: String
 	let subtitle: String
-	let imageURL: URL?
+	let imagePath: String?
 
-	init(title: String, subtitle: String, imageURL: URL?) {
+	init(title: String, subtitle: String, imagePath: String?) {
 		self.title = title
 		self.subtitle = subtitle
-		self.imageURL = imageURL
+		self.imagePath = imagePath
 	}
 }

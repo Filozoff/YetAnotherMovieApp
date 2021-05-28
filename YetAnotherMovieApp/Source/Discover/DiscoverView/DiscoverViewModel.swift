@@ -12,7 +12,7 @@ class DiscoverViewModel: ObservableObject {
 
 	@Published var moviesGridViewModel = MediumHGridViewModel(elements: [])
 
-	@Published private var movieList: MovieListDTO?
+	@Published private var movies: [MovieDTO]?
 
 	private var cancellable: AnyCancellable?
 	private let networking: MovieNetworking
@@ -23,9 +23,9 @@ class DiscoverViewModel: ObservableObject {
 	}
 
 	private func bind() {
-		$movieList.map {
+		$movies.map {
 			MediumHGridViewModel(
-				elements: $0?.results.map {
+				elements: $0?.map {
 					MediumInfoViewModel(
 						title: $0.title,
 						subtitle: "Rating: \($0.voteAverage)",
@@ -48,7 +48,7 @@ class DiscoverViewModel: ObservableObject {
 					}
 				},
 				receiveValue: { [weak self] in
-					self?.movieList = $0
+					self?.movies = $0
 				}
 			)
 	}

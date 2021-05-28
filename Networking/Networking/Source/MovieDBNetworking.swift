@@ -17,13 +17,14 @@ public class MovieDBNetworking: MovieNetworking {
 		self.session = session
 	}
 
-	public func getTrending(for mediaType: MediaTypeDTO, in timeWindow: TimeWindowDTO) -> AnyPublisher<MovieListDTO, Error> {
+	public func getTrending(for mediaType: MediaTypeDTO, in timeWindow: TimeWindowDTO) -> AnyPublisher<[MovieDTO], Error> {
 		guard let url = URL(string: "\(service.base)/trending/\(mediaType.rawValue)/\(timeWindow.rawValue)") else { fatalError() }
 		var request = service.applyCommonHeaders(to: URLRequest(url: url))
 		request.httpMethod = "GET"
 		return session.dataTaskPublisher(for: request)
 			.map { $0.data }
-			.decode(type: MovieListDTO.self, decoder: JSONDecoder.Factory.snakeCase())
+			.decode(type: Paged<MovieDTO>.self, decoder: JSONDecoder.Factory.snakeCase())
+			.map { $0.results }
 			.receive(on: RunLoop.main)
 			.eraseToAnyPublisher()
 	}

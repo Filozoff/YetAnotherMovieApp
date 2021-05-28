@@ -24,6 +24,7 @@ struct DiscoverView: View {
 					MediumHGrid(viewModel: viewModel.trendingMoviesViewModel)
 					SmallHGrid(viewModel: viewModel.popularPeopleViewModel)
 				}
+				.padding(.bottom, Layout.Spacings.regular)
 			}
 			.navigationTitle("Discover")
 			.onAppear {

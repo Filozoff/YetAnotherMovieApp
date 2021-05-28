@@ -13,7 +13,7 @@ struct SmallInfo: View {
 	@ObservedObject var viewModel: SmallInfoViewModel
 
     var body: some View {
-		HStack {
+		HStack(spacing: Layout.Spacings.small) {
 			MovieImage(path: viewModel.imagePath, remote: MovieDBNetworking(session: .shared))
 				.scaledToFill()
 				.frame(width: 80, height: 80)
@@ -30,7 +30,6 @@ struct SmallInfo: View {
 					.foregroundColor(.secondary)
 					.lineLimit(2)
 			}
-			.padding(.leading, Layout.Spacings.small)
 			
 			Spacer()
 		}

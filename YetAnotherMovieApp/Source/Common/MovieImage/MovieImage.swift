@@ -11,9 +11,9 @@ import SwiftUI
 struct MovieImage<Placeholder>: View where Placeholder: View {
 
 	@StateObject private var loader: MovieImageLoader
-	@State private var width: CGFloat = 500.0
 
 	private let placeholder: Placeholder
+	private let width: Float = 400.0
 
     var body: some View {
 		Group {
@@ -25,8 +25,7 @@ struct MovieImage<Placeholder>: View where Placeholder: View {
 			}
 		}
 		.onAppear {
-			print(width)
-			loader.load(for: Float(width))
+			loader.load(for: width)
 		}
     }
 

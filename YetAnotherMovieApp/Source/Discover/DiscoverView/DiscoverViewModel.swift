@@ -10,11 +10,13 @@ import Networking
 
 class DiscoverViewModel: ObservableObject {
 
-	@Published var moviesGridViewModel = MediumHGridViewModel(elements: [])
+	@Published var popularPeopleViewModel = SmallHGridViewModel(elements: [])
+	@Published var trendingMoviesViewModel = MediumHGridViewModel(elements: [])
 
 	@Published private var movies = [MovieDTO]()
+	@Published private var popularPeople = [PersonDTO]()
 
-	private var cancellable: AnyCancellable?
+	private var cancellables = [AnyCancellable]()
 	private let networking: MovieNetworking
 
 	init(networking: MovieNetworking) {
@@ -34,11 +36,25 @@ class DiscoverViewModel: ObservableObject {
 				}
 			)
 		}
-		.assign(to: &$moviesGridViewModel)
+		.assign(to: &$trendingMoviesViewModel)
+
+		$popularPeople.map {
+			SmallHGridViewModel(
+				elements: $0.map {
+					SmallInfoViewModel(
+						title: $0.name,
+						subtitle: "Popularity: \($0.popularity)",
+						imagePath: $0.profilePath
+					)
+				}
+			)
+		}
+		.assign(to: &$popularPeopleViewModel)
 	}
 
 	func loadData() {
-		cancellable = networking.getTrending(for: .movie, in: .day)
+		cancellables.removeAll()
+		networking.getTrending(for: .movie, in: .day)
 			.sink(
 				receiveCompletion: { completion in
 					switch completion {
@@ -51,5 +67,21 @@ class DiscoverViewModel: ObservableObject {
 					self?.movies = $0
 				}
 			)
+			.store(in: &cancellables)
+
+		networking.getPopularPersons()
+			.sink(
+				receiveCompletion: { completion in
+					switch completion {
+					case .failure(let error):
+						print("Error: \(error)")
+					case .finished: break
+					}
+				},
+				receiveValue: { [weak self] in
+					self?.popularPeople = $0
+				}
+			)
+			.store(in: &cancellables)
 	}
 }

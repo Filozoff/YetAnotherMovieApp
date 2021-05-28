@@ -20,6 +20,9 @@
 		2F6EF49A2652F241003EEF2B /* SmallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EF4992652F241003EEF2B /* SmallInfo.swift */; };
 		2F7E9634266004C30024715F /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E9633266004C30024715F /* MovieImage.swift */; };
 		2F7E963C266038F40024715F /* MovieImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E963B266038F40024715F /* MovieImageLoader.swift */; };
+		2FAA1113266188510095C5E7 /* SmallInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA1112266188510095C5E7 /* SmallInfoViewModel.swift */; };
+		2FAA111626618D140095C5E7 /* SmallHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA111526618D140095C5E7 /* SmallHGrid.swift */; };
+		2FAA111826618F0F0095C5E7 /* SmallHGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA111726618F0F0095C5E7 /* SmallHGridViewModel.swift */; };
 		2FB9D4CE26556C9900009BD5 /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9D4CD26556C9900009BD5 /* DiscoverViewModel.swift */; };
 		2FB9D4D0265581B000009BD5 /* MediumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9D4CF265581B000009BD5 /* MediumInfoViewModel.swift */; };
 		2FB9D4D32655834800009BD5 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9D4D22655834800009BD5 /* URLImage.swift */; };
@@ -79,6 +82,9 @@
 		2F6EF4992652F241003EEF2B /* SmallInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallInfo.swift; sourceTree = "<group>"; };
 		2F7E9633266004C30024715F /* MovieImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImage.swift; sourceTree = "<group>"; };
 		2F7E963B266038F40024715F /* MovieImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageLoader.swift; sourceTree = "<group>"; };
+		2FAA1112266188510095C5E7 /* SmallInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallInfoViewModel.swift; sourceTree = "<group>"; };
+		2FAA111526618D140095C5E7 /* SmallHGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallHGrid.swift; sourceTree = "<group>"; };
+		2FAA111726618F0F0095C5E7 /* SmallHGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallHGridViewModel.swift; sourceTree = "<group>"; };
 		2FB9D4CD26556C9900009BD5 /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
 		2FB9D4CF265581B000009BD5 /* MediumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumInfoViewModel.swift; sourceTree = "<group>"; };
 		2FB9D4D22655834800009BD5 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 				2F36A45A26544F93001A4FD7 /* DiscoverView */,
 				2F36A45B26544FA5001A4FD7 /* MediumHGrid */,
 				2F36A45C26544FB3001A4FD7 /* MediumInfo */,
+				2FAA111426618C900095C5E7 /* SmallHGrid */,
 				2F36A45D26544FBF001A4FD7 /* SmallInfo */,
 			);
 			path = Discover;
@@ -200,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				2F6EF4992652F241003EEF2B /* SmallInfo.swift */,
+				2FAA1112266188510095C5E7 /* SmallInfoViewModel.swift */,
 			);
 			path = SmallInfo;
 			sourceTree = "<group>";
@@ -298,6 +306,15 @@
 				2FF12FBB2649BB7B0008BEC5 /* YetAnotherMovieAppTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		2FAA111426618C900095C5E7 /* SmallHGrid */ = {
+			isa = PBXGroup;
+			children = (
+				2FAA111526618D140095C5E7 /* SmallHGrid.swift */,
+				2FAA111726618F0F0095C5E7 /* SmallHGridViewModel.swift */,
+			);
+			path = SmallHGrid;
 			sourceTree = "<group>";
 		};
 		2FB9D4D12655833500009BD5 /* Common */ = {
@@ -517,11 +534,14 @@
 			files = (
 				2F6B90FF2656E99A00BE8821 /* MediumHGridViewModel.swift in Sources */,
 				2FF12FAC2649BB7A0008BEC5 /* MainTabView.swift in Sources */,
+				2FAA111626618D140095C5E7 /* SmallHGrid.swift in Sources */,
+				2FAA1113266188510095C5E7 /* SmallInfoViewModel.swift in Sources */,
 				2F1631D42649CAAA007ACEFC /* Layout.swift in Sources */,
 				2FB9D4D6265583B600009BD5 /* ImageLoader.swift in Sources */,
 				2F1C78E6264DA17E00530628 /* MediumInfo.swift in Sources */,
 				2FF12FAA2649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift in Sources */,
 				2F7E9634266004C30024715F /* MovieImage.swift in Sources */,
+				2FAA111826618F0F0095C5E7 /* SmallHGridViewModel.swift in Sources */,
 				2FB9D4D0265581B000009BD5 /* MediumInfoViewModel.swift in Sources */,
 				2F1631DC2649CD6C007ACEFC /* DiscoverView.swift in Sources */,
 				2F1631D22649C30A007ACEFC /* Color.swift in Sources */,

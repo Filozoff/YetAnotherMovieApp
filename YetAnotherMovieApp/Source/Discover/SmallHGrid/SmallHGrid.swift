@@ -49,18 +49,18 @@ struct SmallHGrid_Previews: PreviewProvider {
 				imagePath: "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
 			),
 			SmallInfoViewModel(
-				title: "Spider man asda sda sd",
-				subtitle: "Spirits of Vengeance wskrzeszone!",
+				title: "How to Lose Friends & Alienate People",
+				subtitle: "A British writer struggles to fit in at a high-profile magazine in New York.",
 				imagePath: "/sd1eByiFLL0arwkip6lV6l25cSj.jpg"
 			),
 			SmallInfoViewModel(
-				title: "Spider man",
-				subtitle: "Spirits of Vengeance wskrzeszone!",
+				title: "Spider-Man: Homecoming",
+				subtitle: "Following the events of Captain America: Civil War, Peter Parker, with the help of his mentor Tony Stark, tries to balance his life as an ordinary high school student in Queens, New York City, with fighting crime as his superhero alter ego Spider-Man as a new threat, the Vulture, emerges.",
 				imagePath: "/sd1eByiFLL0arwkip6lV6l25cSj.jpg"
 			),
 			SmallInfoViewModel(
-				title: "Spider man",
-				subtitle: "Spirits of Vengeance wskrzeszone!",
+				title: "Fast & Furious Presents: Hobbs & Shaw",
+				subtitle: "Ever since US Diplomatic Security Service Agent Hobbs and lawless outcast Shaw first faced off, they just have traded smack talk and body blows.",
 				imagePath: "/sd1eByiFLL0arwkip6lV6l25cSj.jpg"
 			)
 		]

@@ -24,6 +24,7 @@ struct SmallInfo: View {
 				Text(viewModel.title)
 					.font(.body)
 					.lineLimit(2)
+					.layoutPriority(1)
 
 				Text(viewModel.subtitle)
 					.font(.subheadline)

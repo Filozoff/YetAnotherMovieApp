@@ -18,7 +18,7 @@ struct SmallInfo: View {
 				.scaledToFill()
 				.frame(width: 80, height: 80)
 				.clipped()
-				.rounded(cornerRadius: Layout.CornerRadius.regular, border: .black.opacity(0.7))
+				.rounded(cornerRadius: Layout.CornerRadius.regular, border: .mvTertiaryBackground.opacity(0.1))
 
 			VStack(alignment: .leading) {
 				Text(viewModel.title)
@@ -46,7 +46,10 @@ struct SmallInfo_Previews: PreviewProvider {
 	)
 
     static var previews: some View {
-		SmallInfo(viewModel: previewObject)
-			.previewLayout(.sizeThatFits)
+		ForEach(ColorScheme.allCases, id: \.self) {
+			SmallInfo(viewModel: previewObject)
+				.preferredColorScheme($0)
+		}
+		.previewLayout(.sizeThatFits)
     }
 }

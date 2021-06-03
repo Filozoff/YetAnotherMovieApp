@@ -16,13 +16,13 @@ struct MediumInfo: View {
 		VStack {
 			Text(viewModel.title)
 				.font(.title2)
-				.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+				.frame(maxWidth: .infinity, alignment: .leading)
 				.lineLimit(1)
 
 			Text(viewModel.subtitle)
 				.font(.title3)
 				.foregroundColor(.secondary)
-				.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+				.frame(maxWidth: .infinity, alignment: .leading)
 				.lineLimit(1)
 
 			GeometryReader { reader in
@@ -32,7 +32,7 @@ struct MediumInfo: View {
 					.clipped()
 			}
 			.aspectRatio(16/9, contentMode: .fit)
-			.rounded(cornerRadius: Layout.CornerRadius.regular, border: .black.opacity(0.7))
+			.rounded(cornerRadius: Layout.CornerRadius.regular, border: .mvTertiaryBackground.opacity(0.1))
 		}
     }
 }
@@ -44,10 +44,13 @@ struct MediumInfo_Previews: PreviewProvider {
 		subtitle: "Łowy rozpoczete",
 		imagePath: "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
 	)
-	
-    static var previews: some View {
-		MediumInfo(viewModel: previewObject)
-			.frame(width: 350)
-			.previewLayout(.sizeThatFits)
-    }
+
+	static var previews: some View {
+		ForEach(ColorScheme.allCases, id: \.self) {
+			MediumInfo(viewModel: previewObject)
+				.preferredColorScheme($0)
+		}
+		.frame(width: 350)
+		.previewLayout(.sizeThatFits)
+	}
 }

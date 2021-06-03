@@ -19,10 +19,22 @@ struct DiscoverView: View {
 			ScrollView {
 				LazyVGrid(
 					columns: [GridItem()],
-					spacing: Layout.Spacings.small
+					spacing: Layout.Spacings.small,
+					pinnedViews: .sectionHeaders
 				) {
-					MediumHGrid(viewModel: viewModel.trendingMoviesViewModel)
-					SmallHGrid(viewModel: viewModel.popularPeopleViewModel)
+					Section {
+						MediumHGrid(viewModel: viewModel.trendingMoviesViewModel)
+					}
+
+					Section(
+						header: Text("Popular actors")
+							.font(.title)
+							.bold()
+							.frame(maxWidth: .infinity, alignment: .leading)
+							.padding([.top, .horizontal])
+					) {
+						SmallHGrid(viewModel: viewModel.popularPeopleViewModel)
+					}
 				}
 				.padding(.bottom, Layout.Spacings.regular)
 			}

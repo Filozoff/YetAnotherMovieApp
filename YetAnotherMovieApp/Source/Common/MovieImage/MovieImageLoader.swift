@@ -24,26 +24,12 @@ class MovieImageLoader: ObservableObject {
 		self.remote = remote
 	}
 
-	func load(width: CGFloat) {
-		let pixelWidth = width * UIScreen.main.scale
+	func load(for size: CGSize) {
+		let pixelWidth = size.width * UIScreen.main.scale
 		guard let path = path else { return }
 		remote.image(width: Float(pixelWidth), path: path)
 			.receive(on: Self.imageQueue)
-			.map { UIImage(data: $0)?.downsampled(width: pixelWidth) }
-			.replaceError(with: nil)
-			.receive(on: DispatchQueue.main)
-			.assign(to: &$image)
-	}
-
-	func load(for size: CGSize) {
-		let pixelSize = CGSize(
-			width: size.width * UIScreen.main.scale,
-			height: size.height * UIScreen.main.scale
-		)
-		guard let path = path else { return }
-		remote.image(width: Float(pixelSize.width), path: path)
-			.receive(on: Self.imageQueue)
-			.map { UIImage(data: $0)?.downsampled(with: pixelSize) }
+			.map { UIImage.downsampled(data: $0, size: size) }
 			.replaceError(with: nil)
 			.receive(on: DispatchQueue.main)
 			.assign(to: &$image)
@@ -52,13 +38,24 @@ class MovieImageLoader: ObservableObject {
 
 extension UIImage {
 
-	func downsampled(width: CGFloat) -> UIImage {
-		downsampled(
-			with: CGSize(
-				width: width,
-				height: size.height * width / size.width
-			)
+	static func downsampled(data: Data, size: CGSize) -> UIImage? {
+		let imageSourceOptions = [kCGImageSourceShouldCache: false] as CFDictionary
+		guard let imageSource = CGImageSourceCreateWithData(data as CFData, imageSourceOptions) else { return nil }
+		let pixelSize = CGSize(
+			width: size.width * UIScreen.main.scale,
+			height: size.height * UIScreen.main.scale
 		)
+
+		let maxDimentionInPixels = max(pixelSize.width, pixelSize.height)
+		let downsampledOptions = [
+			kCGImageSourceCreateThumbnailFromImageAlways: true,
+			kCGImageSourceShouldCacheImmediately: true,
+			kCGImageSourceCreateThumbnailWithTransform: true,
+			kCGImageSourceThumbnailMaxPixelSize: maxDimentionInPixels
+		] as CFDictionary
+
+		guard let downsampledImage = CGImageSourceCreateImageAtIndex(imageSource, 0, downsampledOptions) else { return nil }
+		return UIImage(cgImage: downsampledImage).downsampled(with: size)
 	}
 
 	func downsampled(with size: CGSize) -> UIImage {

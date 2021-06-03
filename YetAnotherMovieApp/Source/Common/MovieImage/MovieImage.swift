@@ -11,7 +11,7 @@ import SwiftUI
 struct MovieImage<Placeholder>: View where Placeholder: View {
 
 	@StateObject private var loader: MovieImageLoader
-	@State private var width: CGFloat = .zero
+	@State private var size: CGSize = .zero
 
 	private let placeholder: Placeholder
 
@@ -24,9 +24,9 @@ struct MovieImage<Placeholder>: View where Placeholder: View {
 				placeholder
 			}
 		}
-		.bindGeometry(to: $width, reader: { $0.size.width })
+		.bindGeometry(to: $size, reader: { $0.size })
 		.onAppear {
-			loader.load(width: width)
+			loader.load(for: size)
 		}
     }
 

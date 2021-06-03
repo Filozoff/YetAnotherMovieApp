@@ -11,7 +11,7 @@ struct SmallHGrid: View {
 
 	@ObservedObject var viewModel: SmallHGridViewModel
 
-	@State private var width: CGFloat = 0.0
+	@State private var size: CGSize = .zero
 
 	private let gridItem = GridItem(.fixed(80))
 
@@ -19,7 +19,7 @@ struct SmallHGrid: View {
 		ZStack {
 			Color
 				.clear
-				.bindGeometry(to: $width, reader: { $0.size.width })
+				.bindGeometry(to: $size, reader: { $0.size })
 				.padding(.horizontal)
 
 			ScrollView(.horizontal) {
@@ -30,7 +30,7 @@ struct SmallHGrid: View {
 				) {
 					ForEach(viewModel.elements) { element in
 						SmallInfo(viewModel: element)
-							.frame(width: width)
+							.frame(width: size.width)
 					}
 				}
 				.padding(.horizontal)

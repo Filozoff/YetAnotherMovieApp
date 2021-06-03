@@ -9,14 +9,14 @@ import SwiftUI
 
 extension View {
 
-	/// Bind any `CGFloat` value within a `GeometryProxy`. Big thanks to **Daniel Saidi** and [his article](https://danielsaidi.com/blog/2020/03/25/bind-view-geometry-data-to-bindable-properties).
+	/// Bind any `CGSize` value within a `GeometryProxy`. Big thanks to **Daniel Saidi** and [his article](https://danielsaidi.com/blog/2020/03/25/bind-view-geometry-data-to-bindable-properties).
 	/// - Parameters:
-	///   - binding: A `CGFloat` binding
+	///   - binding: A `CGSize` binding
 	///   - reader: A closure that reads from geometry proxy.
 	/// - Returns: A `View`.
 	func bindGeometry(
-		to binding: Binding<CGFloat>,
-		reader: @escaping (GeometryProxy) -> CGFloat) -> some View
+		to binding: Binding<CGSize>,
+		reader: @escaping (GeometryProxy) -> CGSize) -> some View
 	{
 		background(GeometryBinding(reader: reader))
 			.onPreferenceChange(GeometryPreference.self) { binding.wrappedValue = $0 }
@@ -25,7 +25,7 @@ extension View {
 
 private struct GeometryBinding: View {
 
-	let reader: (GeometryProxy) -> CGFloat
+	let reader: (GeometryProxy) -> CGSize
 
 	var body: some View {
 		GeometryReader { geometry in
@@ -39,9 +39,9 @@ private struct GeometryBinding: View {
 
 private struct GeometryPreference: PreferenceKey {
 
-	static var defaultValue: CGFloat = 0.0
+	static var defaultValue: CGSize = .zero
 
-	static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-		value = max(value, nextValue())
+	static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+		value = nextValue()
 	}
 }

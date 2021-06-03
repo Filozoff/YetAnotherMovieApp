@@ -11,20 +11,20 @@ struct MediumHGrid: View {
 
 	@ObservedObject var viewModel: MediumHGridViewModel
 
-	@State private var width: CGFloat = 0.0
+	@State private var size: CGSize = .zero
 
 	var body: some View {
 		ZStack {
 			Color
 				.clear
-				.bindGeometry(to: $width, reader: { $0.size.width })
+				.bindGeometry(to: $size, reader: { $0.size })
 				.padding(.horizontal)
 
 			ScrollView(.horizontal) {
 				LazyHGrid(rows: [GridItem()], alignment: .top, spacing: Layout.Spacings.small) {
 					ForEach(viewModel.elements) { element in
 						MediumInfo(viewModel: element)
-							.frame(width: width)
+							.frame(width: size.width)
 					}
 				}
 				.padding(.horizontal)

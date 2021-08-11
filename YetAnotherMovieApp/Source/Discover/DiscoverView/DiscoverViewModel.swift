@@ -10,9 +10,11 @@ import Networking
 
 class DiscoverViewModel: ObservableObject {
 
+	@Published var genresViewModel = [String]()
 	@Published var popularPeopleViewModel = SmallHGridViewModel(elements: [])
 	@Published var trendingMoviesViewModel = MediumHGridViewModel(elements: [])
 
+	@Published private var genres = [GenreDTO]()
 	@Published private var movies = [MovieDTO]()
 	@Published private var popularPeople = [PersonDTO]()
 
@@ -25,6 +27,11 @@ class DiscoverViewModel: ObservableObject {
 	}
 
 	private func bind() {
+		$genres.map {
+			$0.map { $0.name }
+		}
+		.assign(to: &$genresViewModel)
+
 		$movies.map {
 			MediumHGridViewModel(
 				elements: $0.map {
@@ -54,6 +61,21 @@ class DiscoverViewModel: ObservableObject {
 
 	func loadData() {
 		cancellables.removeAll()
+		networking.getGenres()
+			.sink(
+				receiveCompletion: { completion in
+					switch completion {
+					case .failure(let error):
+						print("Error: \(error)")
+					case .finished: break
+					}
+				},
+				receiveValue: { [weak self] in
+					self?.genres = $0
+				}
+			)
+			.store(in: &cancellables)
+
 		networking.getTrending(for: .movie, in: .day)
 			.sink(
 				receiveCompletion: { completion in

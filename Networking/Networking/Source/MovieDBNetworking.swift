@@ -17,6 +17,18 @@ public class MovieDBNetworking: MovieNetworking {
 		self.session = session
 	}
 
+	public func getGenres() -> AnyPublisher<[GenreDTO], Error> {
+		guard let url = URL(string: "\(service.base)/genre/movie/list") else { fatalError() }
+		var request = service.applyCommonHeaders(to: URLRequest(url: url))
+		request.httpMethod = "GET"
+		return session.dataTaskPublisher(for: request)
+			.map { $0.data }
+			.decode(type: GenresListDTO.self, decoder: JSONDecoder.Factory.snakeCase())
+			.map { $0.genres }
+			.receive(on: RunLoop.main)
+			.eraseToAnyPublisher()
+	}
+
 	public func getPopularPersons() -> AnyPublisher<[PersonDTO], Error> {
 		guard let url = URL(string: "\(service.base)/person/popular") else { fatalError() }
 		var request = service.applyCommonHeaders(to: URLRequest(url: url))

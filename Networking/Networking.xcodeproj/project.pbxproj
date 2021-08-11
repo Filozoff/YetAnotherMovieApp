@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F642A182669603B00FAAEA3 /* GenreDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F642A172669603B00FAAEA3 /* GenreDTO.swift */; };
+		2F642A1A266962C100FAAEA3 /* GenresListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F642A19266962C100FAAEA3 /* GenresListDTO.swift */; };
 		2F7E9636266023B10024715F /* MovieNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E9635266023B10024715F /* MovieNetworking.swift */; };
 		2F7E963826602B3B0024715F /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E963726602B3B0024715F /* JSONDecoder.swift */; };
 		2F7E963A266032260024715F /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E9639266032260024715F /* ImageSize.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F642A172669603B00FAAEA3 /* GenreDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDTO.swift; sourceTree = "<group>"; };
+		2F642A19266962C100FAAEA3 /* GenresListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListDTO.swift; sourceTree = "<group>"; };
 		2F7E9635266023B10024715F /* MovieNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetworking.swift; sourceTree = "<group>"; };
 		2F7E963726602B3B0024715F /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		2F7E9639266032260024715F /* ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 		2FC55C882652FD5500C70735 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				2F642A172669603B00FAAEA3 /* GenreDTO.swift */,
+				2F642A19266962C100FAAEA3 /* GenresListDTO.swift */,
 				2F7E9639266032260024715F /* ImageSize.swift */,
 				2FC55C892652FD6F00C70735 /* MediaTypeDTO.swift */,
 				2FC55C8F2652FE9C00C70735 /* MovieDTO.swift */,
@@ -288,11 +294,13 @@
 				2FC55C872652FCED00C70735 /* MovieDBNetworking.swift in Sources */,
 				2FC55C902652FE9C00C70735 /* MovieDTO.swift in Sources */,
 				2FC55C852652FBA800C70735 /* MovieDB.swift in Sources */,
+				2F642A1A266962C100FAAEA3 /* GenresListDTO.swift in Sources */,
 				2F7E963826602B3B0024715F /* JSONDecoder.swift in Sources */,
 				2F7E963A266032260024715F /* ImageSize.swift in Sources */,
 				2F7E9636266023B10024715F /* MovieNetworking.swift in Sources */,
 				2FAA111A266192E70095C5E7 /* Paged.swift in Sources */,
 				2FC55C8E2652FE5500C70735 /* MovieListDTO.swift in Sources */,
+				2F642A182669603B00FAAEA3 /* GenreDTO.swift in Sources */,
 				2FAA1111266187BD0095C5E7 /* PersonDTO.swift in Sources */,
 				2FC55C8A2652FD6F00C70735 /* MediaTypeDTO.swift in Sources */,
 			);

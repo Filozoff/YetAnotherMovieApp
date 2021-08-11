@@ -26,14 +26,14 @@ struct DiscoverView: View {
 						MediumHGrid(viewModel: viewModel.trendingMoviesViewModel)
 					}
 
-					Section(
-						header: Text("Popular actors")
-							.font(.title)
-							.bold()
-							.frame(maxWidth: .infinity, alignment: .leading)
-							.padding([.top, .horizontal])
-					) {
+					Section(header: SectionHeader(title: "Popular actors")) {
 						SmallHGrid(viewModel: viewModel.popularPeopleViewModel)
+					}
+
+					Section(header: SectionHeader(title: "Genres")) {
+						ForEach(viewModel.genresViewModel, id: \.self) {
+							ListElement(title: $0)
+						}
 					}
 				}
 				.padding(.bottom, Layout.Spacings.regular)

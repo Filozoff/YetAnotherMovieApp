@@ -12,7 +12,8 @@ struct YetAnotherMovieAppApp: App {
 	
     var body: some Scene {
         WindowGroup {
-			MainTabView().accentColor(.mvPrimary)
+			RootCoordinator()
+				.accentColor(.mvPrimary)
         }
     }
 }

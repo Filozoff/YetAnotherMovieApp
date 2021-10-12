@@ -1,5 +1,5 @@
 //
-//  MainTabView.swift
+//  RootCoordinator.swift
 //  YetAnotherMovieApp
 //
 //  Created by Filo on 10/05/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainTabView: View {
+struct RootCoordinator: View {
 
 	@State private var selectedItem: TabItem = .home
 	
@@ -19,7 +19,7 @@ struct MainTabView: View {
 				}
 				.tag(TabItem.home)
 
-			TopMoviesView()
+			TopMoviesCoordinator()
 				.tabItem {
 					Label("Home", systemImage: selectedItem == .topMovies ? "star.fill" : "star")
 				}
@@ -28,7 +28,7 @@ struct MainTabView: View {
     }
 }
 
-extension MainTabView {
+extension RootCoordinator {
 
 	enum TabItem: Hashable {
 		case home
@@ -39,7 +39,7 @@ extension MainTabView {
 struct ContentView_Previews: PreviewProvider {
 
     static var previews: some View {
-		MainTabView()
+		RootCoordinator()
 			.accentColor(.mvPrimary)
     }
 }

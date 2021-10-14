@@ -195,6 +195,15 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		2F344DFC271621B20046D7E7 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				2F4B7F0626C4607200C594E5 /* NavigationNode.swift */,
+				2F4B7F0826C4651300C594E5 /* NStack.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
 		2F36A45A26544F93001A4FD7 /* DiscoverView */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,9 +243,8 @@
 		2F4B7F0526C45D2800C594E5 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				2F344DFC271621B20046D7E7 /* Old */,
 				2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */,
-				2F4B7F0626C4607200C594E5 /* NavigationNode.swift */,
-				2F4B7F0826C4651300C594E5 /* NStack.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";

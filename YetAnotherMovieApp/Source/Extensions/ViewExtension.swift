@@ -8,6 +8,11 @@
 import SwiftUI
 
 extension View {
+	
+	func screenTransition<T>(_ transition: T) -> some View where T: ScreenTransition { transition }
+}
+
+extension View {
 
 	/// Bind any `CGSize` value within a `GeometryProxy`. Big thanks to **Daniel Saidi** and [his article](https://danielsaidi.com/blog/2020/03/25/bind-view-geometry-data-to-bindable-properties).
 	/// - Parameters:

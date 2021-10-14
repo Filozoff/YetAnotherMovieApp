@@ -15,6 +15,8 @@
 		2F1C78E4264D9FE700530628 /* MediumHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E3264D9FE700530628 /* MediumHGrid.swift */; };
 		2F1C78E6264DA17E00530628 /* MediumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E5264DA17E00530628 /* MediumInfo.swift */; };
 		2F1C78E9264DC20600530628 /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E8264DC20600530628 /* Rounded.swift */; };
+		2F24C9E62718CE9100447844 /* ScreenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24C9E52718CE9100447844 /* ScreenTransition.swift */; };
+		2F24C9E82718CEDA00447844 /* PushScreenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24C9E72718CEDA00447844 /* PushScreenTransition.swift */; };
 		2F344DF527160CBA0046D7E7 /* TopMoviesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DF427160CBA0046D7E7 /* TopMoviesCoordinator.swift */; };
 		2F344DF727160DCB0046D7E7 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DF627160DCB0046D7E7 /* ViewFactory.swift */; };
 		2F4B7F0426C45D1D00C594E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */; };
@@ -85,6 +87,8 @@
 		2F1C78E3264D9FE700530628 /* MediumHGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumHGrid.swift; sourceTree = "<group>"; };
 		2F1C78E5264DA17E00530628 /* MediumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumInfo.swift; sourceTree = "<group>"; };
 		2F1C78E8264DC20600530628 /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
+		2F24C9E52718CE9100447844 /* ScreenTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTransition.swift; sourceTree = "<group>"; };
+		2F24C9E72718CEDA00447844 /* PushScreenTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushScreenTransition.swift; sourceTree = "<group>"; };
 		2F344DF427160CBA0046D7E7 /* TopMoviesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesCoordinator.swift; sourceTree = "<group>"; };
 		2F344DF627160DCB0046D7E7 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 			children = (
 				2F344DFC271621B20046D7E7 /* Old */,
 				2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */,
+				2F24C9E52718CE9100447844 /* ScreenTransition.swift */,
+				2F24C9E72718CEDA00447844 /* PushScreenTransition.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -607,6 +613,7 @@
 				2F6B90FF2656E99A00BE8821 /* MediumHGridViewModel.swift in Sources */,
 				2FF12FAC2649BB7A0008BEC5 /* RootCoordinator.swift in Sources */,
 				2FAA111626618D140095C5E7 /* SmallHGrid.swift in Sources */,
+				2F24C9E62718CE9100447844 /* ScreenTransition.swift in Sources */,
 				2FAA1113266188510095C5E7 /* SmallInfoViewModel.swift in Sources */,
 				2F642A1D2669649100FAAEA3 /* VisualEffect.swift in Sources */,
 				2F1631D42649CAAA007ACEFC /* Layout.swift in Sources */,
@@ -630,6 +637,7 @@
 				2F642A212669673300FAAEA3 /* SectionHeader.swift in Sources */,
 				2F1631DA2649CD09007ACEFC /* TopMoviesView.swift in Sources */,
 				2F4B7F0426C45D1D00C594E5 /* Coordinator.swift in Sources */,
+				2F24C9E82718CEDA00447844 /* PushScreenTransition.swift in Sources */,
 				2F7E963C266038F40024715F /* MovieImageLoader.swift in Sources */,
 				2F4B7F0926C4651300C594E5 /* NStack.swift in Sources */,
 				2F1C78E9264DC20600530628 /* Rounded.swift in Sources */,

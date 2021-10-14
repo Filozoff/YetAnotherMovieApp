@@ -19,6 +19,9 @@
 		2F24C9E82718CEDA00447844 /* PushScreenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F24C9E72718CEDA00447844 /* PushScreenTransition.swift */; };
 		2F344DF527160CBA0046D7E7 /* TopMoviesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DF427160CBA0046D7E7 /* TopMoviesCoordinator.swift */; };
 		2F344DF727160DCB0046D7E7 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DF627160DCB0046D7E7 /* ViewFactory.swift */; };
+		2F344DF9271613380046D7E7 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DF8271613380046D7E7 /* Node.swift */; };
+		2F344DFB271614030046D7E7 /* NNStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DFA271614030046D7E7 /* NNStack.swift */; };
+		2F344DFE271625270046D7E7 /* NNavigationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DFD271625270046D7E7 /* NNavigationNode.swift */; };
 		2F4B7F0426C45D1D00C594E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */; };
 		2F4B7F0726C4607200C594E5 /* NavigationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B7F0626C4607200C594E5 /* NavigationNode.swift */; };
 		2F4B7F0926C4651300C594E5 /* NStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B7F0826C4651300C594E5 /* NStack.swift */; };
@@ -91,6 +94,9 @@
 		2F24C9E72718CEDA00447844 /* PushScreenTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushScreenTransition.swift; sourceTree = "<group>"; };
 		2F344DF427160CBA0046D7E7 /* TopMoviesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesCoordinator.swift; sourceTree = "<group>"; };
 		2F344DF627160DCB0046D7E7 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		2F344DF8271613380046D7E7 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		2F344DFA271614030046D7E7 /* NNStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNStack.swift; sourceTree = "<group>"; };
+		2F344DFD271625270046D7E7 /* NNavigationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNavigationNode.swift; sourceTree = "<group>"; };
 		2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2F4B7F0626C4607200C594E5 /* NavigationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationNode.swift; sourceTree = "<group>"; };
 		2F4B7F0826C4651300C594E5 /* NStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NStack.swift; sourceTree = "<group>"; };
@@ -249,6 +255,9 @@
 			children = (
 				2F344DFC271621B20046D7E7 /* Old */,
 				2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */,
+				2F344DF8271613380046D7E7 /* Node.swift */,
+				2F344DFA271614030046D7E7 /* NNStack.swift */,
+				2F344DFD271625270046D7E7 /* NNavigationNode.swift */,
 				2F24C9E52718CE9100447844 /* ScreenTransition.swift */,
 				2F24C9E72718CEDA00447844 /* PushScreenTransition.swift */,
 			);
@@ -631,9 +640,12 @@
 				2F53DABF264C82CA001323A6 /* ViewExtension.swift in Sources */,
 				2F1C78E4264D9FE700530628 /* MediumHGrid.swift in Sources */,
 				2F6EF49A2652F241003EEF2B /* SmallInfo.swift in Sources */,
+				2F344DFE271625270046D7E7 /* NNavigationNode.swift in Sources */,
 				2F4B7F0726C4607200C594E5 /* NavigationNode.swift in Sources */,
+				2F344DF9271613380046D7E7 /* Node.swift in Sources */,
 				2F344DF727160DCB0046D7E7 /* ViewFactory.swift in Sources */,
 				2FB9D4CE26556C9900009BD5 /* DiscoverViewModel.swift in Sources */,
+				2F344DFB271614030046D7E7 /* NNStack.swift in Sources */,
 				2F642A212669673300FAAEA3 /* SectionHeader.swift in Sources */,
 				2F1631DA2649CD09007ACEFC /* TopMoviesView.swift in Sources */,
 				2F4B7F0426C45D1D00C594E5 /* Coordinator.swift in Sources */,

@@ -35,7 +35,7 @@ struct PushScreenTransition_Previews: PreviewProvider {
 
 	struct PushScreenTransition_Wrapper: View {
 
-		@State var isActive = false
+		@State private var isActive = false
 
 		var body: some View {
 			PushScreenTransition(

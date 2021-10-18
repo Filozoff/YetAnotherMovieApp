@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TopMoviesCoordinator: View {
 
-	@State private var stack: [Screen] = [.home]
+	@State private var stack: [Node<Screen>] = [.push(.home)]
 
 	var body: some View {
 		NavigationView {
-			NStack($stack) { screen, index in
+			NNStack($stack) { screen, index in
 				switch screen {
 				case .home:
 					ViewFactory.make(
@@ -24,7 +24,7 @@ struct TopMoviesCoordinator: View {
 				case .viewOne:
 					ViewFactory.make(
 						number: 1,
-						action: { push(screen: .viewTwo) },
+						action: { present(screen: .viewTwo) },
 						popAction: { pop() },
 						popToRootAction: { popToRoot() }
 					)
@@ -65,7 +65,11 @@ struct TopMoviesCoordinator: View {
 	}
 
 	func push(screen: Screen) {
-		stack.append(screen)
+		stack.append(.push(screen))
+	}
+
+	func present(screen: Screen) {
+		stack.append(.present(screen))
 	}
 }
 

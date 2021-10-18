@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-indirect enum NNavigationNode<Screen, V: View>: View {
-	case view(from: V, to: NNavigationNode<Screen, V>, stack: Binding<[Screen]>, index: Int)
+indirect enum NNavigationNode<Screen, V>: View where V: View {
+	case view(from: V, to: NNavigationNode<Screen, V>, node: Node<Screen>, stack: Binding<[Node<Screen>]>, index: Int)
 	case end
 
 	private var isActiveBinding: Binding<Bool> {
 		switch self {
-		case .end, .view(_, .end, _, _):
+		case .end, .view(_, .end, _, _, _):
 			return .constant(false)
 
-		case .view(_, .view, let stack, let index):
+		case .view(_, .view, _, let stack, let index):
 			return Binding(
 				get: {
 					return stack.wrappedValue.count > index + 1
@@ -36,7 +36,7 @@ indirect enum NNavigationNode<Screen, V: View>: View {
 		case .end:
 			EmptyView()
 
-		case .view(let view, _, _, _):
+		case .view(let view, _, _, _, _):
 			view
 		}
 	}
@@ -47,12 +47,18 @@ indirect enum NNavigationNode<Screen, V: View>: View {
 		case .end:
 			EmptyView()
 
-		case .view(_, let node, _, _):
+		case .view(_, let node, _, _, _):
 			node
 		}
 	}
 
 	var body: some View {
-		screenTransition(PushScreenTransition(beginning: fromView, destination: toView, isActive: isActiveBinding))
+		switch self {
+		case .end:
+			EmptyView()
+
+		case .view(let from, let to, let node, _, _):
+			node.transition(beginning: from, destination: to, isActiveBinding: isActiveBinding)
+		}
 	}
 }

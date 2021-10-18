@@ -7,8 +7,29 @@
 
 import SwiftUI
 
-public enum Node<Screen> {
-	case root(Screen)
-	case present(Screen)
+enum Node<Screen> {
 	case push(Screen)
+}
+
+extension Node {
+
+	var screen: Screen {
+		switch self {
+		case .push(let screen): return screen
+		}
+	}
+}
+
+extension Node {
+
+	func transition<B: View, D: View>(
+		beginning: B,
+		destination: D,
+		isActiveBinding: Binding<Bool>
+	) -> some ScreenTransition {
+		switch self {
+		case .push:
+			return PushScreenTransition(beginning: beginning, destination: destination, isActive: isActiveBinding)
+		}
+	}
 }

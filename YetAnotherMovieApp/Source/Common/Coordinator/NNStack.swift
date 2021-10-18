@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-public struct NNStack<Screen, ScreenView: View>: View {
+struct NNStack<Screen, ScreenView: View>: View {
 
-	@Binding var stack: [Screen]
+	@Binding var stack: [Node<Screen>]
 	@ViewBuilder var buildView: (Screen, Int) -> ScreenView
 
-	public init(_ stack: Binding<[Screen]>, @ViewBuilder buildView: @escaping (Screen, Int) -> ScreenView) {
+	init(_ stack: Binding<[Node<Screen>]>, @ViewBuilder buildView: @escaping (Screen, Int) -> ScreenView) {
 		self._stack = stack
 		self.buildView = buildView
 	}
@@ -21,20 +21,21 @@ public struct NNStack<Screen, ScreenView: View>: View {
 		stack
 			.enumerated()
 			.reversed()
-			.reduce(NNavigationNode<Screen, ScreenView>.end) { node, screen in
+			.reduce(NNavigationNode<Screen, ScreenView>.end) { nnode, node in
 				.view(
-					from: buildView(screen.element, screen.offset),
-					to: node,
+					from: buildView(node.element.screen, node.offset),
+					to: nnode,
+					node: node.element,
 					stack: $stack,
-					index: screen.offset
+					index: node.offset
 				)
 			}
 	}
 }
 
-public extension NNStack {
+extension NNStack {
 
-	init(_ stack: Binding<[Screen]>, @ViewBuilder buildView: @escaping (Screen) -> ScreenView) {
+	init(_ stack: Binding<[Node<Screen>]>, @ViewBuilder buildView: @escaping (Screen) -> ScreenView) {
 		self._stack = stack
 		self.buildView = { screen, _ in buildView(screen) }
 	}

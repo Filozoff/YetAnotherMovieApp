@@ -5,6 +5,7 @@
 //  Created by Filo on 10/05/2021.
 //
 
+import Coordinator
 import SwiftUI
 
 struct RootCoordinator: View {
@@ -19,7 +20,7 @@ struct RootCoordinator: View {
 				}
 				.tag(TabItem.home)
 
-			TopMoviesCoordinator()
+			ExampleCoordinator()
 				.tabItem {
 					Label("Home", systemImage: selectedItem == .topMovies ? "star.fill" : "star")
 				}

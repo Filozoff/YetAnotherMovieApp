@@ -1,10 +1,3 @@
-//
-//  NavigationNode.swift
-//  YetAnotherMovieApp
-//
-//  Created by Filo on 11/08/2021.
-//
-
 import SwiftUI
 
 indirect enum NavigationNode<Screen, V: View>: View {

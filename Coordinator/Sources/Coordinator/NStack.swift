@@ -1,10 +1,3 @@
-//
-//  NStack.swift
-//  YetAnotherMovieApp
-//
-//  Created by Filo on 11/08/2021.
-//
-
 import SwiftUI
 
 public struct NStack<Screen, ScreenView: View>: View {

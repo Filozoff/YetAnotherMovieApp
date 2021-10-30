@@ -1,10 +1,3 @@
-//
-//  ViewFactory.swift
-//  YetAnotherMovieApp
-//
-//  Created by Filo on 12/10/2021.
-//
-
 import SwiftUI
 
 struct ViewFactory {

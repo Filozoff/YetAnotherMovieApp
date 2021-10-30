@@ -1,19 +1,12 @@
-//
-//  TopMoviesCoordinator.swift
-//  YetAnotherMovieApp
-//
-//  Created by Filo on 12/10/2021.
-//
-
 import SwiftUI
 
-struct TopMoviesCoordinator: View {
+public struct ExampleCoordinator: View {
 
-	@State private var stack: [Node<Screen>] = [.root(.home)]
+	@State private var stack: [Screen] = [.home]
 
-	var body: some View {
+	public var body: some View {
 		NavigationView {
-			NStack2($stack) { screen, index in
+			NStack($stack) { screen, index in
 				switch screen {
 				case .home:
 					ViewFactory.make(
@@ -56,6 +49,8 @@ struct TopMoviesCoordinator: View {
 		}
 	}
 
+	public init() { }
+
 	func pop() {
 		stack = stack.dropLast()
 	}
@@ -65,15 +60,15 @@ struct TopMoviesCoordinator: View {
 	}
 
 	func push(screen: Screen) {
-		stack.append(.push(screen))
+		stack.append(screen)
 	}
 
 	func present(screen: Screen) {
-		stack.append(.present(screen))
+		stack.append(screen)
 	}
 }
 
-extension TopMoviesCoordinator {
+extension ExampleCoordinator {
 
 	enum Screen {
 		case home
@@ -83,3 +78,4 @@ extension TopMoviesCoordinator {
 		case viewFour
 	}
 }
+

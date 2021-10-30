@@ -14,6 +14,14 @@ extension View {
 
 extension View {
 
+	func debug() -> some View {
+		print("Debug View: \(self)")
+		return self
+	}
+}
+
+extension View {
+
 	/// Bind any `CGSize` value within a `GeometryProxy`. Big thanks to **Daniel Saidi** and [his article](https://danielsaidi.com/blog/2020/03/25/bind-view-geometry-data-to-bindable-properties).
 	/// - Parameters:
 	///   - binding: A `CGSize` binding

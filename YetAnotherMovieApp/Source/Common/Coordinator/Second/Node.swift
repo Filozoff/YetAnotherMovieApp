@@ -10,6 +10,7 @@ import SwiftUI
 enum Node<Screen> {
 	case present(Screen)
 	case push(Screen)
+	case root(Screen)
 }
 
 extension Node {
@@ -18,6 +19,7 @@ extension Node {
 		switch self {
 		case .present(let screen): return screen
 		case .push(let screen): return screen
+		case .root(let screen): return screen
 		}
 	}
 }
@@ -35,6 +37,8 @@ extension Node {
 			SheetScreenTransition(beginning: beginning, destination: destination, isActive: isActiveBinding)
 		case .push:
 			PushScreenTransition(beginning: beginning, destination: destination, isActive: isActiveBinding)
+		case .root:
+			RootScreenTransition(destination: destination)
 		}
 	}
 }

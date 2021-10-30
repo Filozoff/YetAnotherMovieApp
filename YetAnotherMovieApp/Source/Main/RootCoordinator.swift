@@ -5,7 +5,7 @@
 //  Created by Filo on 10/05/2021.
 //
 
-import Coordinator
+import Coordinator2
 import SwiftUI
 
 struct RootCoordinator: View {

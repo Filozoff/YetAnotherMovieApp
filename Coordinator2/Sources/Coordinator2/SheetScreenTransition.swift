@@ -1,10 +1,3 @@
-//
-//  SheetScreenTransition.swift
-//  YetAnotherMovieApp
-//
-//  Created by Filo on 18/10/2021.
-//
-
 import SwiftUI
 
 struct SheetScreenTransition<Beginning, Destination>: ScreenTransition where Beginning: View, Destination: View {

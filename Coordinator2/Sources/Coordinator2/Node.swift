@@ -1,10 +1,3 @@
-//
-//  Node.swift
-//  YetAnotherMovieApp
-//
-//  Created by Filo on 12/10/2021.
-//
-
 import SwiftUI
 
 enum Node<Screen> {

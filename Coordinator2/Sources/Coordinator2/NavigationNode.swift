@@ -1,14 +1,7 @@
-//
-//  NNavigationNode.swift
-//  YetAnotherMovieApp
-//
-//  Created by Filo on 12/10/2021.
-//
-
 import SwiftUI
 
-indirect enum NavigationNode2<Screen, V>: View where V: View {
-	case view(from: V, to: NavigationNode2<Screen, V>, node: Node<Screen>, stack: Binding<[Node<Screen>]>, index: Int)
+indirect enum NavigationNode<Screen, V>: View where V: View {
+	case view(from: V, to: NavigationNode<Screen, V>, node: Node<Screen>, stack: Binding<[Node<Screen>]>, index: Int)
 	case end
 
 	private var isActiveBinding: Binding<Bool> {

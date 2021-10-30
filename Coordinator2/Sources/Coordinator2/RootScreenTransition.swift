@@ -1,10 +1,3 @@
-//
-//  RootScreenTransition.swift
-//  YetAnotherMovieApp
-//
-//  Created by Filo on 21/10/2021.
-//
-
 import SwiftUI
 
 struct RootScreenTransition<Destination>: ScreenTransition where Destination: View {

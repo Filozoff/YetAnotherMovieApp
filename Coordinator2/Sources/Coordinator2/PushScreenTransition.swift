@@ -1,10 +1,3 @@
-//
-//  PushScreenTransition.swift
-//  YetAnotherMovieApp
-//
-//  Created by Filo on 14/10/2021.
-//
-
 import SwiftUI
 
 struct PushScreenTransition<Beginning, Destination>: ScreenTransition where Beginning: View, Destination: View {

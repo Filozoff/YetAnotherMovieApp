@@ -20,8 +20,8 @@
 		2F344DF527160CBA0046D7E7 /* TopMoviesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DF427160CBA0046D7E7 /* TopMoviesCoordinator.swift */; };
 		2F344DF727160DCB0046D7E7 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DF627160DCB0046D7E7 /* ViewFactory.swift */; };
 		2F344DF9271613380046D7E7 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DF8271613380046D7E7 /* Node.swift */; };
-		2F344DFB271614030046D7E7 /* NNStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DFA271614030046D7E7 /* NNStack.swift */; };
-		2F344DFE271625270046D7E7 /* NNavigationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DFD271625270046D7E7 /* NNavigationNode.swift */; };
+		2F344DFB271614030046D7E7 /* NStack2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DFA271614030046D7E7 /* NStack2.swift */; };
+		2F344DFE271625270046D7E7 /* NavigationNode2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F344DFD271625270046D7E7 /* NavigationNode2.swift */; };
 		2F4B7F0426C45D1D00C594E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */; };
 		2F4B7F0726C4607200C594E5 /* NavigationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B7F0626C4607200C594E5 /* NavigationNode.swift */; };
 		2F4B7F0926C4651300C594E5 /* NStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B7F0826C4651300C594E5 /* NStack.swift */; };
@@ -36,6 +36,7 @@
 		2FAA1113266188510095C5E7 /* SmallInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA1112266188510095C5E7 /* SmallInfoViewModel.swift */; };
 		2FAA111626618D140095C5E7 /* SmallHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA111526618D140095C5E7 /* SmallHGrid.swift */; };
 		2FAA111826618F0F0095C5E7 /* SmallHGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA111726618F0F0095C5E7 /* SmallHGridViewModel.swift */; };
+		2FB37ABE2721D0AC008D3847 /* RootScreenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB37ABD2721D0AC008D3847 /* RootScreenTransition.swift */; };
 		2FB9D4CE26556C9900009BD5 /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9D4CD26556C9900009BD5 /* DiscoverViewModel.swift */; };
 		2FB9D4D0265581B000009BD5 /* MediumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9D4CF265581B000009BD5 /* MediumInfoViewModel.swift */; };
 		2FB9D4D32655834800009BD5 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9D4D22655834800009BD5 /* URLImage.swift */; };
@@ -96,8 +97,8 @@
 		2F344DF427160CBA0046D7E7 /* TopMoviesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviesCoordinator.swift; sourceTree = "<group>"; };
 		2F344DF627160DCB0046D7E7 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		2F344DF8271613380046D7E7 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		2F344DFA271614030046D7E7 /* NNStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNStack.swift; sourceTree = "<group>"; };
-		2F344DFD271625270046D7E7 /* NNavigationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNavigationNode.swift; sourceTree = "<group>"; };
+		2F344DFA271614030046D7E7 /* NStack2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NStack2.swift; sourceTree = "<group>"; };
+		2F344DFD271625270046D7E7 /* NavigationNode2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationNode2.swift; sourceTree = "<group>"; };
 		2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2F4B7F0626C4607200C594E5 /* NavigationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationNode.swift; sourceTree = "<group>"; };
 		2F4B7F0826C4651300C594E5 /* NStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NStack.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		2FAA1112266188510095C5E7 /* SmallInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallInfoViewModel.swift; sourceTree = "<group>"; };
 		2FAA111526618D140095C5E7 /* SmallHGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallHGrid.swift; sourceTree = "<group>"; };
 		2FAA111726618F0F0095C5E7 /* SmallHGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallHGridViewModel.swift; sourceTree = "<group>"; };
+		2FB37ABD2721D0AC008D3847 /* RootScreenTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenTransition.swift; sourceTree = "<group>"; };
 		2FB9D4CD26556C9900009BD5 /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
 		2FB9D4CF265581B000009BD5 /* MediumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumInfoViewModel.swift; sourceTree = "<group>"; };
 		2FB9D4D22655834800009BD5 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
@@ -403,11 +405,12 @@
 		2FB37ABB2720A9E2008D3847 /* Second */ = {
 			isa = PBXGroup;
 			children = (
+				2F344DFD271625270046D7E7 /* NavigationNode2.swift */,
+				2F344DFA271614030046D7E7 /* NStack2.swift */,
 				2F344DF8271613380046D7E7 /* Node.swift */,
-				2F344DFA271614030046D7E7 /* NNStack.swift */,
-				2F344DFD271625270046D7E7 /* NNavigationNode.swift */,
-				2F24C9E52718CE9100447844 /* ScreenTransition.swift */,
 				2F24C9E72718CEDA00447844 /* PushScreenTransition.swift */,
+				2FB37ABD2721D0AC008D3847 /* RootScreenTransition.swift */,
+				2F24C9E52718CE9100447844 /* ScreenTransition.swift */,
 				2FBD8A63271DF325000DC8DE /* SheetScreenTransition.swift */,
 			);
 			path = Second;
@@ -646,6 +649,7 @@
 				2F642A1D2669649100FAAEA3 /* VisualEffect.swift in Sources */,
 				2F1631D42649CAAA007ACEFC /* Layout.swift in Sources */,
 				2FB9D4D6265583B600009BD5 /* ImageLoader.swift in Sources */,
+				2FB37ABE2721D0AC008D3847 /* RootScreenTransition.swift in Sources */,
 				2F1C78E6264DA17E00530628 /* MediumInfo.swift in Sources */,
 				2FF12FAA2649BB7A0008BEC5 /* YetAnotherMovieAppApp.swift in Sources */,
 				2F642A16266959B500FAAEA3 /* ListElement.swift in Sources */,
@@ -660,12 +664,12 @@
 				2F53DABF264C82CA001323A6 /* ViewExtension.swift in Sources */,
 				2F1C78E4264D9FE700530628 /* MediumHGrid.swift in Sources */,
 				2F6EF49A2652F241003EEF2B /* SmallInfo.swift in Sources */,
-				2F344DFE271625270046D7E7 /* NNavigationNode.swift in Sources */,
+				2F344DFE271625270046D7E7 /* NavigationNode2.swift in Sources */,
 				2F4B7F0726C4607200C594E5 /* NavigationNode.swift in Sources */,
 				2F344DF9271613380046D7E7 /* Node.swift in Sources */,
 				2F344DF727160DCB0046D7E7 /* ViewFactory.swift in Sources */,
 				2FB9D4CE26556C9900009BD5 /* DiscoverViewModel.swift in Sources */,
-				2F344DFB271614030046D7E7 /* NNStack.swift in Sources */,
+				2F344DFB271614030046D7E7 /* NStack2.swift in Sources */,
 				2F642A212669673300FAAEA3 /* SectionHeader.swift in Sources */,
 				2F1631DA2649CD09007ACEFC /* TopMoviesView.swift in Sources */,
 				2F4B7F0426C45D1D00C594E5 /* Coordinator.swift in Sources */,

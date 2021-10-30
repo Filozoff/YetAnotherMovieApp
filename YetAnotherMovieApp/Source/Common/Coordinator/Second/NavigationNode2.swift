@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-indirect enum NNavigationNode<Screen, V>: View where V: View {
-	case view(from: V, to: NNavigationNode<Screen, V>, node: Node<Screen>, stack: Binding<[Node<Screen>]>, index: Int)
+indirect enum NavigationNode2<Screen, V>: View where V: View {
+	case view(from: V, to: NavigationNode2<Screen, V>, node: Node<Screen>, stack: Binding<[Node<Screen>]>, index: Int)
 	case end
 
 	private var isActiveBinding: Binding<Bool> {

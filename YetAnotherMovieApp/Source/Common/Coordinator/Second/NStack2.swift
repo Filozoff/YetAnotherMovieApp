@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NNStack<Screen, ScreenView: View>: View {
+struct NStack2<Screen, ScreenView: View>: View {
 
 	@Binding var stack: [Node<Screen>]
 	@ViewBuilder var buildView: (Screen, Int) -> ScreenView
@@ -21,7 +21,7 @@ struct NNStack<Screen, ScreenView: View>: View {
 		stack
 			.enumerated()
 			.reversed()
-			.reduce(NNavigationNode<Screen, ScreenView>.end) { nnode, node in
+			.reduce(NavigationNode2<Screen, ScreenView>.end) { nnode, node in
 				.view(
 					from: buildView(node.element.screen, node.offset),
 					to: nnode,
@@ -33,7 +33,7 @@ struct NNStack<Screen, ScreenView: View>: View {
 	}
 }
 
-extension NNStack {
+extension NStack2 {
 
 	init(_ stack: Binding<[Node<Screen>]>, @ViewBuilder buildView: @escaping (Screen) -> ScreenView) {
 		self._stack = stack

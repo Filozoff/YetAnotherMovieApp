@@ -15,9 +15,7 @@
 		2F1C78E4264D9FE700530628 /* MediumHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E3264D9FE700530628 /* MediumHGrid.swift */; };
 		2F1C78E6264DA17E00530628 /* MediumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E5264DA17E00530628 /* MediumInfo.swift */; };
 		2F1C78E9264DC20600530628 /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E8264DC20600530628 /* Rounded.swift */; };
-		2F4B7F0426C45D1D00C594E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */; };
 		2F53DABF264C82CA001323A6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F53DABE264C82CA001323A6 /* ViewExtension.swift */; };
-		2F60F167272D6E650027606C /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60F166272D6E650027606C /* NodeView.swift */; };
 		2F60F16D272D9B540027606C /* Coordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 2F60F16C272D9B540027606C /* Coordinator */; };
 		2F60F16F272D9CF70027606C /* Coordinator2 in Frameworks */ = {isa = PBXBuildFile; productRef = 2F60F16E272D9CF70027606C /* Coordinator2 */; };
 		2F642A16266959B500FAAEA3 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F642A15266959B500FAAEA3 /* ListElement.swift */; };
@@ -27,6 +25,7 @@
 		2F6EF49A2652F241003EEF2B /* SmallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EF4992652F241003EEF2B /* SmallInfo.swift */; };
 		2F7E9634266004C30024715F /* MovieImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E9633266004C30024715F /* MovieImage.swift */; };
 		2F7E963C266038F40024715F /* MovieImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E963B266038F40024715F /* MovieImageLoader.swift */; };
+		2F9D2EFA2736FD870044ADB4 /* Coordinator3 in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9D2EF92736FD870044ADB4 /* Coordinator3 */; };
 		2FAA1113266188510095C5E7 /* SmallInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA1112266188510095C5E7 /* SmallInfoViewModel.swift */; };
 		2FAA111626618D140095C5E7 /* SmallHGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA111526618D140095C5E7 /* SmallHGrid.swift */; };
 		2FAA111826618F0F0095C5E7 /* SmallHGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA111726618F0F0095C5E7 /* SmallHGridViewModel.swift */; };
@@ -84,9 +83,7 @@
 		2F1C78E3264D9FE700530628 /* MediumHGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumHGrid.swift; sourceTree = "<group>"; };
 		2F1C78E5264DA17E00530628 /* MediumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumInfo.swift; sourceTree = "<group>"; };
 		2F1C78E8264DC20600530628 /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
-		2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2F53DABE264C82CA001323A6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		2F60F166272D6E650027606C /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
 		2F60F169272D98AE0027606C /* Coordinator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Coordinator; sourceTree = "<group>"; };
 		2F642A15266959B500FAAEA3 /* ListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
 		2F642A1C2669649100FAAEA3 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
@@ -125,6 +122,7 @@
 				2FC55C932653020900C70735 /* Networking.framework in Frameworks */,
 				2F60F16F272D9CF70027606C /* Coordinator2 in Frameworks */,
 				2F60F16D272D9B540027606C /* Coordinator in Frameworks */,
+				2F9D2EFA2736FD870044ADB4 /* Coordinator3 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,15 +224,6 @@
 				2FAA1112266188510095C5E7 /* SmallInfoViewModel.swift */,
 			);
 			path = SmallInfo;
-			sourceTree = "<group>";
-		};
-		2F4B7F0526C45D2800C594E5 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				2FB37ABC2720A9FD008D3847 /* Third */,
-				2F4B7F0326C45D1D00C594E5 /* Coordinator.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		2F53DABD264C82A6001323A6 /* Extensions */ = {
@@ -382,18 +371,9 @@
 			path = SmallHGrid;
 			sourceTree = "<group>";
 		};
-		2FB37ABC2720A9FD008D3847 /* Third */ = {
-			isa = PBXGroup;
-			children = (
-				2F60F166272D6E650027606C /* NodeView.swift */,
-			);
-			path = Third;
-			sourceTree = "<group>";
-		};
 		2FB9D4D12655833500009BD5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2F4B7F0526C45D2800C594E5 /* Coordinator */,
 				2F642A1E2669670200FAAEA3 /* Headers */,
 				2F7E96322660049A0024715F /* MovieImage */,
 				2FB9D4D42655839A00009BD5 /* URLImage */,
@@ -498,6 +478,7 @@
 			packageProductDependencies = (
 				2F60F16C272D9B540027606C /* Coordinator */,
 				2F60F16E272D9CF70027606C /* Coordinator2 */,
+				2F9D2EF92736FD870044ADB4 /* Coordinator3 */,
 			);
 			productName = YetAnotherMovieApp;
 			productReference = 2FF12FA62649BB7A0008BEC5 /* YetAnotherMovieApp.app */;
@@ -632,11 +613,9 @@
 				2F53DABF264C82CA001323A6 /* ViewExtension.swift in Sources */,
 				2F1C78E4264D9FE700530628 /* MediumHGrid.swift in Sources */,
 				2F6EF49A2652F241003EEF2B /* SmallInfo.swift in Sources */,
-				2F60F167272D6E650027606C /* NodeView.swift in Sources */,
 				2FB9D4CE26556C9900009BD5 /* DiscoverViewModel.swift in Sources */,
 				2F642A212669673300FAAEA3 /* SectionHeader.swift in Sources */,
 				2F1631DA2649CD09007ACEFC /* TopMoviesView.swift in Sources */,
-				2F4B7F0426C45D1D00C594E5 /* Coordinator.swift in Sources */,
 				2F7E963C266038F40024715F /* MovieImageLoader.swift in Sources */,
 				2F1C78E9264DC20600530628 /* Rounded.swift in Sources */,
 			);
@@ -963,6 +942,10 @@
 		2F60F16E272D9CF70027606C /* Coordinator2 */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Coordinator2;
+		};
+		2F9D2EF92736FD870044ADB4 /* Coordinator3 */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Coordinator3;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

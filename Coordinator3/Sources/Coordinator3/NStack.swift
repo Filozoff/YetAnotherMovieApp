@@ -2,7 +2,7 @@ import SwiftUI
 
 struct NStack<Page, PageView>: View where PageView: View {
 
-	@Binding var stack: [Page]
+	@Binding private var stack: [Page]
 	@ViewBuilder var pageViewBuilder: (Page, Int) -> PageView
 
 	init(_ stack: Binding<[Page]>, @ViewBuilder pageViewBuilder: @escaping (Page, Int) -> PageView) {
@@ -11,22 +11,27 @@ struct NStack<Page, PageView>: View where PageView: View {
 	}
 
 	public var body: some View {
-		EmptyView()
+		build(number: stack.count)
 	}
 
-//	func fold() {
-//		combine(
-//			previous: combine(
-//				previous: combine(
-//					previous: (...)
-//				)
-//			)
-//		)
-//	}
-
-//	func combine(previous: Previous) -> some View where Previous: View {
-//		NodeView(previous: previous, content: <#T##_#>, stack: <#T##Binding<[_]>#>, index: <#T##Int#>)
-//	}
+	func build(number: Int) -> AnyView {
+		if number == 1 {
+			return AnyView(pageViewBuilder(stack[number - 1], number - 1))
+		} else {
+			return AnyView(
+				NodeView(
+					previous: {
+						build(number: number - 1)
+					},
+					content: {
+						pageViewBuilder(stack[number - 1], number - 1)
+					},
+					stack: $stack,
+					index: number - 1
+				)
+			)
+		}
+	}
 }
 
 extension NStack {

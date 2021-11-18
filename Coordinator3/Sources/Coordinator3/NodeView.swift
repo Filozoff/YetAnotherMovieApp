@@ -1,16 +1,13 @@
 import Combine
 import SwiftUI
 
-public protocol NodeProtocol: View { }
-extension EmptyView: NodeProtocol { }
-
 struct NodeView<PreviousNode, Page, Content>: View where PreviousNode: View, Content: View {
 
     var body: some View {
 		VStack {
 			previous
 				.background(
-					NavigationLink(destination: content, isActive: observer.isActiveBinding, label: EmptyView.init)
+					NavigationLink(destination: content, isActive: isActiveBinding, label: EmptyView.init)
 						.hidden()
 				)
 		}
@@ -18,37 +15,32 @@ struct NodeView<PreviousNode, Page, Content>: View where PreviousNode: View, Con
 
 	@ViewBuilder private let content: Content
 	@ViewBuilder private let previous: PreviousNode
-	@StateObject private var observer: StackObserver<Page>
 
-	init(@ViewBuilder previous: () -> PreviousNode, content: Content, stackPublisher: CurrentValueSubject<[Page], Never>, index: Int) {
-		self.content = content
+	private var isActiveBinding: Binding<Bool>
+
+	init(
+		@ViewBuilder previous: () -> PreviousNode,
+		@ViewBuilder content: () -> Content,
+		stack: Binding<[Page]>,
+		index: Int
+	) {
+		self.content = content()
 		self.previous = previous()
-		_observer = StateObject(wrappedValue: .init(stackPublisher: stackPublisher, index: index))
-	}
-}
-
-class StackObserver<Page>: ObservableObject {
-
-	var isActiveBinding: Binding<Bool>
-
-	private let index: Int
-	@Published private var pages = [Page]()
-
-	init(stackPublisher: CurrentValueSubject<[Page], Never>, index: Int) {
-		self.index = index
 
 		isActiveBinding = Binding<Bool>(
-			get: { stackPublisher.value.count > index },
+			get: {
+				let isActive = stack.wrappedValue.count > index
+				print("GET: ACTIVE: \(isActive), index: \(index)")
+				return isActive
+			},
 			set: { isActive in
+				print("SET: ACTIVE: \(isActive), index: \(index), CURRENT: \(stack.wrappedValue)")
 				guard !isActive else { return }
-				guard stackPublisher.value.count > index else { return }
-				let pages = Array(stackPublisher.value.prefix(index + 1))
-				print(pages)
-				stackPublisher.send(pages)
+				guard stack.wrappedValue.count > index else { return }
+				let pages = Array(stack.wrappedValue.prefix(index + 1))
+				print("SET: UPDATE: \(pages)")
+				stack.wrappedValue = pages
 			}
 		)
-
-		stackPublisher
-			.assign(to: &$pages)
 	}
 }

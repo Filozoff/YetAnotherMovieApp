@@ -10,7 +10,7 @@ public struct ViewA: View {
 		NavigationView {
 			VStack {
 				NavigationLink("Go to view B", isActive: $isActive) {
-					ViewB(viewModel: Factory.make())
+					LazyView(ViewB(viewModel: Factory.make()))
 				}
 			}
 		}

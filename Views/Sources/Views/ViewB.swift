@@ -16,7 +16,7 @@ public struct ViewB: View {
 		}
 
 		NavigationLink("go to view C", isActive: $isActive) {
-			ViewC(viewModel: Factory.make())
+			LazyView(ViewC(viewModel: Factory.make()))
 		}
 	}
 }

@@ -1,3 +1,4 @@
+import Combine
 import SwiftUI
 
 public struct ViewB: View {
@@ -15,6 +16,10 @@ public struct ViewB: View {
 			viewModel.bump()
 		}
 
+		Button("Autobump \(viewModel.isAutobump ? "Stop" : "Start")") {
+			viewModel.startStop()
+		}
+
 		NavigationLink("go to view C", isActive: $isActive) {
 			LazyView(ViewC(viewModel: Factory.make()))
 		}
@@ -30,6 +35,9 @@ struct ViewB_Previews: PreviewProvider {
 public class ViewBViewModel: ObservableObject {
 
 	@Published var counter = 0
+	@Published var isAutobump = false
+
+	private var cancellables = Set<AnyCancellable>()
 
 	public init() {
 		print("B: \(#function)")
@@ -41,5 +49,24 @@ public class ViewBViewModel: ObservableObject {
 
 	func bump() {
 		counter += 1
+	}
+
+	func startStop() {
+		isAutobump.toggle()
+		guard isAutobump else {
+			cancellables.removeAll()
+			return
+		}
+
+		startAutobump()
+	}
+
+	func startAutobump() {
+		Timer.publish(every: 2, on: .main, in: .default)
+			.autoconnect()
+			.sink { [unowned self] output in
+				self.bump()
+			}
+			.store(in: &cancellables)
 	}
 }

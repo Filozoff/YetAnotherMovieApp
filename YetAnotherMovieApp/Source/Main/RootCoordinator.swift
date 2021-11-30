@@ -7,6 +7,7 @@
 
 import Coordinator3
 import SwiftUI
+import Views
 
 struct RootCoordinator: View {
 
@@ -20,9 +21,9 @@ struct RootCoordinator: View {
 				}
 				.tag(TabItem.home)
 
-			ExampleCoordinator()
+			ViewA()
 				.tabItem {
-					Label("Home", systemImage: selectedItem == .topMovies ? "star.fill" : "star")
+					Label("Top movies", systemImage: selectedItem == .topMovies ? "star.fill" : "star")
 				}
 				.tag(TabItem.topMovies)
 		}

@@ -16,6 +16,7 @@
 		2F1C78E6264DA17E00530628 /* MediumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E5264DA17E00530628 /* MediumInfo.swift */; };
 		2F1C78E9264DC20600530628 /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C78E8264DC20600530628 /* Rounded.swift */; };
 		2F53DABF264C82CA001323A6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F53DABE264C82CA001323A6 /* ViewExtension.swift */; };
+		2F58CF2F2756C32A00DFFE4D /* Views in Frameworks */ = {isa = PBXBuildFile; productRef = 2F58CF2E2756C32A00DFFE4D /* Views */; };
 		2F60F16D272D9B540027606C /* Coordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 2F60F16C272D9B540027606C /* Coordinator */; };
 		2F60F16F272D9CF70027606C /* Coordinator2 in Frameworks */ = {isa = PBXBuildFile; productRef = 2F60F16E272D9CF70027606C /* Coordinator2 */; };
 		2F642A16266959B500FAAEA3 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F642A15266959B500FAAEA3 /* ListElement.swift */; };
@@ -123,6 +124,7 @@
 				2F60F16F272D9CF70027606C /* Coordinator2 in Frameworks */,
 				2F60F16D272D9B540027606C /* Coordinator in Frameworks */,
 				2F9D2EFA2736FD870044ADB4 /* Coordinator3 in Frameworks */,
+				2F58CF2F2756C32A00DFFE4D /* Views in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +481,7 @@
 				2F60F16C272D9B540027606C /* Coordinator */,
 				2F60F16E272D9CF70027606C /* Coordinator2 */,
 				2F9D2EF92736FD870044ADB4 /* Coordinator3 */,
+				2F58CF2E2756C32A00DFFE4D /* Views */,
 			);
 			productName = YetAnotherMovieApp;
 			productReference = 2FF12FA62649BB7A0008BEC5 /* YetAnotherMovieApp.app */;
@@ -935,6 +938,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2F58CF2E2756C32A00DFFE4D /* Views */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Views;
+		};
 		2F60F16C272D9B540027606C /* Coordinator */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Coordinator;

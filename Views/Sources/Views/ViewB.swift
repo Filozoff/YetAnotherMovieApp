@@ -4,10 +4,10 @@ import SwiftUI
 public struct ViewB: View {
 
 	@State private var isActive = false
-	@ObservedObject private var viewModel: ViewBViewModel
+	@StateObject private var viewModel: ViewBViewModel
 
 	public init(viewModel: ViewBViewModel) {
-		self.viewModel = viewModel
+		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 
 	public var body: some View {
@@ -62,7 +62,7 @@ public class ViewBViewModel: ObservableObject {
 	}
 
 	func startAutobump() {
-		Timer.publish(every: 2, on: .main, in: .default)
+		Timer.publish(every: 4, on: .main, in: .default)
 			.autoconnect()
 			.sink { [unowned self] output in
 				self.bump()

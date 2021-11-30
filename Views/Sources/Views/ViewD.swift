@@ -3,10 +3,10 @@ import SwiftUI
 public struct ViewD: View {
 
 	@State private var isActive = false
-	@ObservedObject private var viewModel: ViewDViewModel
+	@StateObject private var viewModel: ViewDViewModel
 
 	public init(viewModel: ViewDViewModel) {
-		self.viewModel = viewModel
+		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 
 	public var body: some View {

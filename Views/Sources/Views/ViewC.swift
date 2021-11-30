@@ -3,10 +3,14 @@ import SwiftUI
 public struct ViewC: View {
 
 	@State private var isActive = false
-	@ObservedObject private var viewModel: ViewCViewModel
+
+	// Using `@StateObject` creates a copy of reference type passed through a `init` parameter.
+	// That makes child view data safe from parent's updates.
+	// On the other hand, updating a child's `viewModel` from parent won't trigger any changes on child.
+	@StateObject private var viewModel: ViewCViewModel
 
 	public init(viewModel: ViewCViewModel) {
-		self.viewModel = viewModel
+		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 
 	public var body: some View {
@@ -29,14 +33,15 @@ struct ViewC_Previews: PreviewProvider {
 
 public class ViewCViewModel: ObservableObject {
 
+	let id = UUID()
 	@Published var counter = 0
 
 	public init() {
-		print("C: \(#function)")
+		print("C: \(id) \(#function)")
 	}
 
 	deinit {
-		print("C: \(#function)")
+		print("C: \(id) \(#function)")
 	}
 
 	func bump() {

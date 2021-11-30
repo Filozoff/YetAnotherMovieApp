@@ -2,10 +2,10 @@ import SwiftUI
 
 public struct ViewE: View {
 
-	@ObservedObject private var viewModel: ViewEViewModel
+	@StateObject private var viewModel: ViewEViewModel
 
 	public init(viewModel: ViewEViewModel) {
-		self.viewModel = viewModel
+		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 
 	public var body: some View {

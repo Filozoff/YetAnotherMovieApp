@@ -11,6 +11,10 @@ public struct ViewB: View {
 	}
 
 	public var body: some View {
+		if #available(iOS 15.0, *) {
+			let _ = Self._printChanges()
+		}
+
 		Text("Counter: \(viewModel.counter)")
 		Button("Bump") {
 			viewModel.bump()
@@ -34,17 +38,18 @@ struct ViewB_Previews: PreviewProvider {
 
 public class ViewBViewModel: ObservableObject {
 
+	let id = UUID()
 	@Published var counter = 0
 	@Published var isAutobump = false
 
 	private var cancellables = Set<AnyCancellable>()
 
 	public init() {
-		print("B: \(#function)")
+		print("B: \(id) \(#function)")
 	}
 
 	deinit {
-		print("B: \(#function)")
+		print("B: \(id) \(#function)")
 	}
 
 	func bump() {

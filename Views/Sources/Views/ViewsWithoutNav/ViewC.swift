@@ -2,10 +2,11 @@ import SwiftUI
 
 public struct ViewC: View {
 
-	@StateObject private var viewModel: ViewCViewModel
+	@StateObject private var viewModel = ViewCViewModel()
+	let onNext: Closure
 	
-	public init(viewModel: ViewCViewModel) {
-		_viewModel = StateObject(wrappedValue: viewModel)
+	public init(onNext: @escaping Closure) {
+		self.onNext = onNext
 	}
 	
 	public var body: some View {
@@ -19,12 +20,15 @@ public struct ViewC: View {
 				viewModel.onButtonTap()
 			}
 		}
+		.onAppear {
+			viewModel.onNext = onNext
+		}
 	}
 }
 
 struct ViewC_Previews: PreviewProvider {
 	static var previews: some View {
-		ViewC(viewModel: ViewCViewModel(onNext: { }))
+		ViewC(onNext: { })
 	}
 }
 
@@ -33,10 +37,9 @@ public class ViewCViewModel: ObservableObject {
 	let id = UUID()
 	@Published var counter = 0
 	
-	private var onNext: Closure
+	fileprivate var onNext: Closure?
 
-	public init(onNext: @escaping Closure) {
-		self.onNext = onNext
+	public init() {
 		print("C: \(id) \(#function)")
 	}
 
@@ -45,7 +48,7 @@ public class ViewCViewModel: ObservableObject {
 	}
 
 	func onButtonTap() {
-		onNext()
+		onNext?()
 	}
 	
 	func bump() {

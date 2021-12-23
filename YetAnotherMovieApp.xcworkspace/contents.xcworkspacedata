@@ -2,10 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Views">
+   </FileRef>
+   <FileRef
       location = "group:Coordinator">
    </FileRef>
    <FileRef
       location = "group:Coordinator2">
+   </FileRef>
+   <FileRef
+      location = "group:Coordinator3">
    </FileRef>
    <FileRef
       location = "group:Networking/Networking.xcodeproj">

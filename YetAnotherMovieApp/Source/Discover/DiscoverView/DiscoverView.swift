@@ -39,6 +39,7 @@ struct DiscoverView: View {
 				.padding(.bottom, Layout.Spacings.regular)
 			}
 			.navigationTitle("Discover")
+			.navigationViewStyle(.stack)
 			.onAppear {
 				viewModel.loadData()
 			}

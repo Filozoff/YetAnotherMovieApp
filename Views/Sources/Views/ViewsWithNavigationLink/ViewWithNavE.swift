@@ -1,10 +1,10 @@
 import SwiftUI
 
-public struct ViewE: View {
+public struct ViewWithNavE: View {
 
-	@StateObject private var viewModel: ViewEViewModel
+	@StateObject private var viewModel: ViewWithNavEViewModel
 
-	public init(viewModel: ViewEViewModel) {
+	public init(viewModel: ViewWithNavEViewModel) {
 		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 
@@ -20,14 +20,14 @@ public struct ViewE: View {
 	}
 }
 
-struct ViewE_Previews: PreviewProvider {
+struct ViewWithNavE_Previews: PreviewProvider {
 
 	static var previews: some View {
-		ViewE(viewModel: ViewEViewModel())
+		ViewWithNavE(viewModel: ViewWithNavEViewModel())
 	}
 }
 
-public class ViewEViewModel: ObservableObject {
+public class ViewWithNavEViewModel: ObservableObject {
 
 	let text = "End"
 	@Published var input = ""

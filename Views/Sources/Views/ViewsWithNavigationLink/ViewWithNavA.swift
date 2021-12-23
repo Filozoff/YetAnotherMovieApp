@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct ViewA: View {
+public struct ViewWithNavA: View {
 
 	@State private var isActive = false
 
@@ -10,15 +10,15 @@ public struct ViewA: View {
 		NavigationView {
 			VStack {
 				NavigationLink("Go to view B", isActive: $isActive) {
-					LazyView(ViewB(viewModel: Factory.make()))
+					LazyView(ViewWithNavB(viewModel: Factory.make()))
 				}
 			}
 		}
     }
 }
 
-struct ViewA_Previews: PreviewProvider {
+struct ViewWithNavA_Previews: PreviewProvider {
     static var previews: some View {
-        ViewA()
+        ViewWithNavA()
     }
 }

@@ -1,12 +1,12 @@
 import Combine
 import SwiftUI
 
-public struct ViewB: View {
+public struct ViewWithNavB: View {
 
 	@State private var isActive = false
-	@StateObject private var viewModel: ViewBViewModel
+	@StateObject private var viewModel: ViewWithNavBViewModel
 
-	public init(viewModel: ViewBViewModel) {
+	public init(viewModel: ViewWithNavBViewModel) {
 		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 
@@ -25,18 +25,18 @@ public struct ViewB: View {
 		}
 
 		NavigationLink("go to view C", isActive: $isActive) {
-			LazyView(ViewC(viewModel: Factory.make()))
+			LazyView(ViewWithNavC(viewModel: Factory.make()))
 		}
 	}
 }
 
-struct ViewB_Previews: PreviewProvider {
+struct ViewWithNavB_Previews: PreviewProvider {
 	static var previews: some View {
-		ViewB(viewModel: ViewBViewModel())
+		ViewWithNavB(viewModel: ViewWithNavBViewModel())
 	}
 }
 
-public class ViewBViewModel: ObservableObject {
+public class ViewWithNavBViewModel: ObservableObject {
 
 	let id = UUID()
 	@Published var counter = 0

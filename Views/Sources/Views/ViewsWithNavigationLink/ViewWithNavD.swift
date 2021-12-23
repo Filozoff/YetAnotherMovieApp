@@ -1,11 +1,11 @@
 import SwiftUI
 
-public struct ViewD: View {
+public struct ViewWithNavD: View {
 
 	@State private var isActive = false
-	@StateObject private var viewModel: ViewDViewModel
+	@StateObject private var viewModel: ViewWithNavDViewModel
 
-	public init(viewModel: ViewDViewModel) {
+	public init(viewModel: ViewWithNavDViewModel) {
 		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 
@@ -16,18 +16,18 @@ public struct ViewD: View {
 		}
 
 		NavigationLink("Go to view E", isActive: $isActive) {
-			LazyView(ViewE(viewModel: Factory.make()))
+			LazyView(ViewWithNavE(viewModel: Factory.make()))
 		}
 	}
 }
 
-struct ViewD_Previews: PreviewProvider {
+struct ViewWithNavD_Previews: PreviewProvider {
 	static var previews: some View {
-		ViewD(viewModel: ViewDViewModel())
+		ViewWithNavD(viewModel: ViewWithNavDViewModel())
 	}
 }
 
-public class ViewDViewModel: ObservableObject {
+public class ViewWithNavDViewModel: ObservableObject {
 
 	@Published var counter = 0
 

@@ -21,7 +21,7 @@ struct RootCoordinator: View {
 				}
 				.tag(TabItem.home)
 
-			ViewA()
+			ViewWithNavA()
 				.tabItem {
 					Label("Top movies", systemImage: selectedItem == .topMovies ? "star.fill" : "star")
 				}

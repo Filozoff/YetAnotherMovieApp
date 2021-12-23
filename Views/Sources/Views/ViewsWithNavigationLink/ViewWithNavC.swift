@@ -1,15 +1,15 @@
 import SwiftUI
 
-public struct ViewC: View {
+public struct ViewWithNavC: View {
 
 	@State private var isActive = false
 
 	// Using `@StateObject` creates a copy of reference type passed through a `init` parameter.
 	// That makes child view data safe from parent's updates.
 	// On the other hand, updating a child's `viewModel` from parent won't trigger any changes on child.
-	@StateObject private var viewModel: ViewCViewModel
+	@StateObject private var viewModel: ViewWithNavCViewModel
 
-	public init(viewModel: ViewCViewModel) {
+	public init(viewModel: ViewWithNavCViewModel) {
 		_viewModel = StateObject(wrappedValue: viewModel)
 	}
 
@@ -20,18 +20,18 @@ public struct ViewC: View {
 		}
 
 		NavigationLink("Go to view D", isActive: $isActive) {
-			LazyView(ViewD(viewModel: Factory.make()))
+			LazyView(ViewWithNavD(viewModel: Factory.make()))
 		}
 	}
 }
 
-struct ViewC_Previews: PreviewProvider {
+struct ViewWithNavC_Previews: PreviewProvider {
 	static var previews: some View {
-		ViewC(viewModel: ViewCViewModel())
+		ViewWithNavC(viewModel: ViewWithNavCViewModel())
 	}
 }
 
-public class ViewCViewModel: ObservableObject {
+public class ViewWithNavCViewModel: ObservableObject {
 
 	let id = UUID()
 	@Published var counter = 0

@@ -2,8 +2,8 @@ import Foundation
 
 class Factory {
 
-	static func make() -> ViewBViewModel { .init() }
-	static func make() -> ViewCViewModel { .init() }
-	static func make() -> ViewDViewModel { .init() }
-	static func make() -> ViewEViewModel { .init() }
+	static func make() -> ViewWithNavBViewModel { .init() }
+	static func make() -> ViewWithNavCViewModel { .init() }
+	static func make() -> ViewWithNavDViewModel { .init() }
+	static func make() -> ViewWithNavEViewModel { .init() }
 }

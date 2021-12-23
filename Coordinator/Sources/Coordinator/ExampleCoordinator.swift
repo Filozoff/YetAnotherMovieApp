@@ -1,4 +1,5 @@
 import SwiftUI
+import Views
 
 public struct ExampleCoordinator: View {
 
@@ -9,41 +10,29 @@ public struct ExampleCoordinator: View {
 			NStack($stack) { screen, index in
 				switch screen {
 				case .home:
-					ViewFactory.make(
-						number: 0,
-						action: { push(screen: .viewOne) }
-					)
+					ViewA(viewModel: .init(onNext: { push(screen: .viewOne) }))
 
 				case .viewOne:
-					ViewFactory.make(
-						number: 1,
-						action: { push(screen: .viewTwo) },
-						popAction: { pop() },
-						popToRootAction: { popToRoot() }
-					)
+					ViewB(viewModel: .init(onNext: { push(screen: .viewTwo) }))
 
 				case .viewTwo:
-					ViewFactory.make(
-						number: 2,
-						action: { push(screen: .viewThree) },
-						popAction: { pop() },
-						popToRootAction: { popToRoot() }
-					)
+					ViewC(viewModel: .init(onNext: { push(screen: .viewThree) }))
 
 				case .viewThree:
-					ViewFactory.make(
-						number: 3,
-						action: { push(screen: .viewFour) },
-						popAction: { pop() },
-						popToRootAction: { popToRoot() }
+					ViewD(
+						viewModel: .init(
+							onNext: { event in
+								switch event {
+								case .pop: pop()
+								case .popToRoot: popToRoot()
+								case .next: push(screen: .viewFour)
+								}
+							}
+						)
 					)
 
 				case .viewFour:
-					ViewFactory.make(
-						number: 4,
-						popAction: { pop() },
-						popToRootAction: { popToRoot() }
-					)
+					ViewE(viewModel: .init())
 				}
 			}
 		}

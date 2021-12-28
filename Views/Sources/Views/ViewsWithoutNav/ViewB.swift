@@ -3,10 +3,13 @@ import SwiftUI
 
 public struct ViewB: View {
 
-	@StateObject private var viewModel: ViewBViewModel
+	@StateObject private var viewModel = ViewBViewModel()
+	private let modify: ValueClosure<ViewBViewModel>
+	private var isLoaded = false
+	private var cancellables = Set<AnyCancellable>()
 
-	public init(viewModel: ViewBViewModel) {
-		_viewModel = StateObject(wrappedValue: viewModel)
+	public init(modify: @escaping ValueClosure<ViewBViewModel>) {
+		self.modify = modify
 	}
 
 	public var body: some View {
@@ -26,26 +29,29 @@ public struct ViewB: View {
 				viewModel.onButtonTap()
 			}
 		}
+		.onAppear {
+			modify(viewModel)
+		}
 	}
 }
 
 struct ViewB_Previews: PreviewProvider {
 	static var previews: some View {
-		ViewB(viewModel: ViewBViewModel(onNext: { }))
+		ViewB(modify: { _ in })
 	}
 }
 
 public class ViewBViewModel: ObservableObject {
 
+	public var onNext: Closure?
+
 	let id = UUID()
 	@Published var counter = 0
 	@Published var isAutobump = false
 
-	private var onNext: Closure
 	private var cancellables = Set<AnyCancellable>()
 
-	public init(onNext: @escaping Closure) {
-		self.onNext = onNext
+	public init() {
 		print("B: \(id) \(#function)")
 	}
 
@@ -54,7 +60,7 @@ public class ViewBViewModel: ObservableObject {
 	}
 
 	func onButtonTap() {
-		onNext()
+		onNext?()
 	}
 
 	func bump() {

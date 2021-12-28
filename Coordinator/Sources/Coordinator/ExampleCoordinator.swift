@@ -10,27 +10,25 @@ public struct ExampleCoordinator: View {
 			NStack($stack) { screen, index in
 				switch screen {
 				case .home:
-					LazyView(ViewA(viewModel: .init(onNext: { push(screen: .viewOne) })))
+					LazyView(ViewA(modify: { $0.onNext = { push(screen: .viewOne) }}))
 
 				case .viewOne:
-					LazyView(ViewB(viewModel: .init(onNext: { push(screen: .viewTwo) })))
+					LazyView(ViewB(modify: { $0.onNext = { push(screen: .viewTwo) }}))
 
 				case .viewTwo:
 					LazyView(ViewC(onNext: { push(screen: .viewThree) }))
 
 				case .viewThree:
 					LazyView(
-						ViewD(
-							viewModel: .init(
-								onNext: { event in
-									switch event {
-									case .pop: pop()
-									case .popToRoot: popToRoot()
-									case .next: push(screen: .viewFour)
-									}
+						ViewD {
+							$0.onNext = { event in
+								switch event {
+								case .pop: pop()
+								case .popToRoot: popToRoot()
+								case .next: push(screen: .viewFour)
 								}
-							)
-						)
+							}
+						}
 					)
 
 				case .viewFour:

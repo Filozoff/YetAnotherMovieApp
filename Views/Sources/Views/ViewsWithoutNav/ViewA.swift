@@ -3,13 +3,16 @@ import SwiftUI
 
 public struct ViewA: View {
 
-	@StateObject private var viewModel: ViewAViewModel
+	@StateObject private var viewModel = ViewAViewModel()
+	private let modify: ValueClosure<ViewAViewModel>
 
-	public init(viewModel: ViewAViewModel) {
-		_viewModel = StateObject(wrappedValue: viewModel)
+	public init(modify: @escaping ValueClosure<ViewAViewModel>) {
+		self.modify = modify
 	}
 
 	public var body: some View {
+		let _ = Self._printChanges()
+
 		NavigationView {
 			VStack {
 				Button("Go to view B") {
@@ -17,20 +20,24 @@ public struct ViewA: View {
 				}
 			}
 		}
+		.navigationViewStyle(.stack)
+		.onAppear {
+			modify(viewModel)
+		}
 	}
 }
 
 public class ViewAViewModel: ObservableObject {
 
+	public var onNext: Closure?
+
 	let id = UUID()
 	@Published var counter = 0
 	@Published var isAutobump = false
 
-	private var onNext: Closure
 	private var cancellables = Set<AnyCancellable>()
 
-	public init(onNext: @escaping Closure) {
-		self.onNext = onNext
+	public init() {
 		print("A: \(id) \(#function)")
 	}
 
@@ -39,7 +46,7 @@ public class ViewAViewModel: ObservableObject {
 	}
 
 	func onButtonTap() {
-		onNext()
+		onNext?()
 	}
 
 	func bump() {
@@ -68,6 +75,6 @@ public class ViewAViewModel: ObservableObject {
 
 struct ViewA_Previews: PreviewProvider {
 	static var previews: some View {
-		ViewA(viewModel: ViewAViewModel(onNext: { }))
+		ViewA(modify: { _ in })
 	}
 }

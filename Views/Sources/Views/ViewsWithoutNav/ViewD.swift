@@ -2,13 +2,16 @@ import SwiftUI
 
 public struct ViewD: View {
 
-	@StateObject private var viewModel: ViewDViewModel
+	@StateObject private var viewModel = ViewDViewModel()
+	private let modify: ValueClosure<ViewDViewModel>
 	
-	public init(viewModel: ViewDViewModel) {
-		_viewModel = StateObject(wrappedValue: viewModel)
+	public init(modify: @escaping ValueClosure<ViewDViewModel>) {
+		self.modify = modify
 	}
 	
 	public var body: some View {
+		let _ = Self._printChanges()
+		
 		VStack(spacing: 20.0) {
 			Text("Counter: \(viewModel.counter)")
 			Button("Bump") {
@@ -27,12 +30,15 @@ public struct ViewD: View {
 				viewModel.onNextTap()
 			}
 		}
+		.onAppear {
+			modify(viewModel)
+		}
 	}
 }
 
 struct ViewD_Previews: PreviewProvider {
 	static var previews: some View {
-		ViewD(viewModel: ViewDViewModel(onNext: { _ in }))
+		ViewD(modify: { _ in })
 	}
 }
 
@@ -40,11 +46,10 @@ public class ViewDViewModel: ObservableObject {
 
 	let id = UUID()
 	@Published var counter = 0
-	
-	private var onNext: ValueClosure<Event>
 
-	public init(onNext: @escaping ValueClosure<Event>) {
-		self.onNext = onNext
+	public var onNext: ValueClosure<Event>?
+
+	public init() {
 		print("D: \(id) \(#function)")
 	}
 
@@ -53,15 +58,15 @@ public class ViewDViewModel: ObservableObject {
 	}
 
 	func onNextTap() {
-		onNext(.next)
+		onNext?(.next)
 	}
 
 	func onPopTap() {
-		onNext(.pop)
+		onNext?(.pop)
 	}
 
 	func onPopToRootTap() {
-		onNext(.popToRoot)
+		onNext?(.popToRoot)
 	}
 	
 	func bump() {
